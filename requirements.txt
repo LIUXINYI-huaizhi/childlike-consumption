@@ -5,3 +5,4 @@ numpy
 wordcloud
 matplotlib
 Pillow
+opencv-python-headless
