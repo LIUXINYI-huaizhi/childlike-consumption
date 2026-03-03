@@ -1,0 +1,367 @@
+DATA PROFILE REPORT
+Time: 2026-03-02T13:21:26
+Data dir: C:\Users\27775\Desktop\正大杯\emotion\data
+Files: 16
+================================================================================
+
+FILE: 1.xlsx
+  Sheets: ['1']
+  SHEET: 1
+    Shape: 200 rows x 10 cols
+    Columns: ['序号', '旺旺号', '初评时间', 'SKU', '初评', '晒图/视频', '有用', '追评', '追评时间', '追评晒图/视频']
+    Top text-like cols:
+      - 晒图/视频: score=4.41, name_hit=0, nonnull=1.00, avg_len=170.2, long_text_ratio=0.91
+      - SKU: score=3.40, name_hit=0, nonnull=1.00, avg_len=45.0, long_text_ratio=1.00
+      - 初评: score=3.16, name_hit=0, nonnull=1.00, avg_len=33.3, long_text_ratio=0.99
+      - 初评时间: score=2.70, name_hit=0, nonnull=1.00, avg_len=10.0, long_text_ratio=1.00
+      - 追评晒图/视频: score=1.58, name_hit=0, nonnull=1.00, avg_len=3.6, long_text_ratio=0.01
+      - 旺旺号: score=1.58, name_hit=0, nonnull=1.00, avg_len=4.0, long_text_ratio=0.00
+
+FILE: 2.xlsx
+  Sheets: ['1']
+  SHEET: 1
+    Shape: 197 rows x 10 cols
+    Columns: ['序号', '旺旺号', '初评时间', 'SKU', '初评', '晒图/视频', '有用', '追评', '追评时间', '追评晒图/视频']
+    Top text-like cols:
+      - 晒图/视频: score=4.19, name_hit=0, nonnull=1.00, avg_len=160.2, long_text_ratio=0.69
+      - 初评: score=2.93, name_hit=0, nonnull=1.00, avg_len=24.6, long_text_ratio=0.93
+      - SKU: score=2.81, name_hit=0, nonnull=1.00, avg_len=15.6, long_text_ratio=1.00
+      - 初评时间: score=2.70, name_hit=0, nonnull=1.00, avg_len=10.0, long_text_ratio=1.00
+      - 旺旺号: score=1.58, name_hit=0, nonnull=1.00, avg_len=4.0, long_text_ratio=0.00
+      - 追评晒图/视频: score=1.56, name_hit=0, nonnull=1.00, avg_len=2.5, long_text_ratio=0.01
+
+FILE: 3.xlsx
+  Sheets: ['1']
+  SHEET: 1
+    Shape: 199 rows x 10 cols
+    Columns: ['SKU', '昵称', '买家所在地区', '首次评价', '首评时间', '首评图片', '视频', '追加评价', '追评图片', '商家回复']
+    Top text-like cols:
+      - 首次评价: score=5.39, name_hit=1, nonnull=1.00, avg_len=47.1, long_text_ratio=0.95
+      - 商家回复: score=5.04, name_hit=1, nonnull=0.03, avg_len=107.8, long_text_ratio=1.00
+      - 首评图片: score=4.12, name_hit=0, nonnull=1.00, avg_len=120.7, long_text_ratio=0.62
+      - 追加评价: score=3.31, name_hit=1, nonnull=0.01, avg_len=15.0, long_text_ratio=1.00
+      - 视频: score=3.02, name_hit=0, nonnull=0.01, avg_len=136.0, long_text_ratio=1.00
+      - 首评时间: score=2.88, name_hit=0, nonnull=1.00, avg_len=19.0, long_text_ratio=1.00
+
+FILE: 4.xlsx
+  Sheets: ['1']
+  SHEET: 1
+    Shape: 166 rows x 10 cols
+    Columns: ['SKU', '昵称', '买家所在地区', '首次评价', '首评时间', '首评图片', '视频', '追加评价', '追评图片', '商家回复']
+    Top text-like cols:
+      - 首次评价: score=5.23, name_hit=1, nonnull=1.00, avg_len=38.8, long_text_ratio=0.95
+      - 商家回复: score=4.97, name_hit=1, nonnull=0.05, avg_len=94.7, long_text_ratio=1.00
+      - 首评图片: score=4.12, name_hit=0, nonnull=1.00, avg_len=109.9, long_text_ratio=0.62
+      - 追加评价: score=3.08, name_hit=1, nonnull=0.02, avg_len=14.8, long_text_ratio=0.75
+      - 视频: score=3.01, name_hit=0, nonnull=0.01, avg_len=136.0, long_text_ratio=1.00
+      - 追评图片: score=3.01, name_hit=0, nonnull=0.01, avg_len=110.0, long_text_ratio=1.00
+
+FILE: 5.xlsx
+  Sheets: ['1']
+  SHEET: 1
+    Shape: 246 rows x 10 cols
+    Columns: ['序号', '旺旺号', '初评时间', 'SKU', '初评', '晒图/视频', '有用', '追评', '追评时间', '追评晒图/视频']
+    Top text-like cols:
+      - 晒图/视频: score=4.31, name_hit=0, nonnull=1.00, avg_len=165.1, long_text_ratio=0.81
+      - 初评: score=2.99, name_hit=0, nonnull=1.00, avg_len=26.3, long_text_ratio=0.96
+      - SKU: score=2.84, name_hit=0, nonnull=1.00, avg_len=17.0, long_text_ratio=1.00
+      - 初评时间: score=2.70, name_hit=0, nonnull=1.00, avg_len=10.0, long_text_ratio=1.00
+      - 旺旺号: score=1.58, name_hit=0, nonnull=1.00, avg_len=4.0, long_text_ratio=0.00
+      - 序号: score=1.55, name_hit=0, nonnull=1.00, avg_len=2.6, long_text_ratio=0.00
+
+FILE: 6.xlsx
+  Sheets: ['1']
+  SHEET: 1
+    Shape: 300 rows x 10 cols
+    Columns: ['SKU', '昵称', '买家所在地区', '首次评价', '首评时间', '首评图片', '视频', '追加评价', '追评图片', '商家回复']
+    Top text-like cols:
+      - 首次评价: score=6.31, name_hit=1, nonnull=1.00, avg_len=90.5, long_text_ratio=1.00
+      - 商家回复: score=4.46, name_hit=1, nonnull=0.01, avg_len=72.0, long_text_ratio=1.00
+      - 首评图片: score=4.40, name_hit=0, nonnull=1.00, avg_len=225.3, long_text_ratio=0.90
+      - 视频: score=3.10, name_hit=0, nonnull=0.07, avg_len=172.1, long_text_ratio=1.00
+      - 追评图片: score=3.00, name_hit=0, nonnull=0.00, avg_len=107.0, long_text_ratio=1.00
+      - 追加评价: score=2.89, name_hit=1, nonnull=0.01, avg_len=6.0, long_text_ratio=0.75
+
+FILE: B站社群_1772353823741.xlsx
+  Sheets: ['sheet1']
+  SHEET: sheet1
+    Shape: 31 rows x 14 cols
+    Columns: ['序号', '正文', '_clueid', '_fullpath', '_realpath', '_theme', '_middle', '_createdate', '_pageno', '_actionno', '_actionvalue', '_prestamp', '_currentstamp', '_importtime']
+    Top text-like cols:
+      - _fullpath: score=4.50, name_hit=0, nonnull=1.00, avg_len=129.0, long_text_ratio=1.00
+      - _realpath: score=4.50, name_hit=0, nonnull=1.00, avg_len=129.0, long_text_ratio=1.00
+      - 正文: score=4.41, name_hit=1, nonnull=0.97, avg_len=9.6, long_text_ratio=0.77
+      - _currentstamp: score=3.52, name_hit=0, nonnull=1.00, avg_len=51.0, long_text_ratio=1.00
+      - _createdate: score=2.84, name_hit=0, nonnull=1.00, avg_len=17.0, long_text_ratio=1.00
+      - _prestamp: score=2.80, name_hit=0, nonnull=1.00, avg_len=15.0, long_text_ratio=1.00
+
+FILE: data_profile_samples.xlsx
+  Sheets: ['1.xlsx__1', '2.xlsx__1', '3.xlsx__1', '4.xlsx__1', '5.xlsx__1', '6.xlsx__1', 'B站社群_1772353823741.xlsx__sheet1', '京东评论_1772106892334.xlsx__sheet1', '动漫手办评论_1772352164263.xlsx__shee', '市场调研情感分析【社交媒体】.xlsx__小红书', '市场调研情感分析【社交媒体】.xlsx__知乎', '棉花娃娃_1772352382739.xlsx__sheet1', '社群评论_1772105173793.xlsx__sheet1', '童年IP社群_1772354429067.xlsx__shee', '谷圈评论_1772351902538.xlsx__sheet1']
+  SHEET: 1.xlsx__1
+    Shape: 10 rows x 10 cols
+    Columns: ['序号', '旺旺号', '初评时间', 'SKU', '初评', '晒图/视频', '有用', '追评', '追评时间', '追评晒图/视频']
+    Top text-like cols:
+      - 晒图/视频: score=4.50, name_hit=0, nonnull=1.00, avg_len=282.5, long_text_ratio=1.00
+      - 初评: score=4.15, name_hit=0, nonnull=1.00, avg_len=87.7, long_text_ratio=0.90
+      - SKU: score=3.37, name_hit=0, nonnull=1.00, avg_len=43.5, long_text_ratio=1.00
+      - 初评时间: score=2.70, name_hit=0, nonnull=1.00, avg_len=10.0, long_text_ratio=1.00
+      - 旺旺号: score=1.58, name_hit=0, nonnull=1.00, avg_len=4.0, long_text_ratio=0.00
+      - 追评晒图/视频: score=1.54, name_hit=0, nonnull=1.00, avg_len=2.0, long_text_ratio=0.00
+  SHEET: 2.xlsx__1
+    Shape: 10 rows x 10 cols
+    Columns: ['序号', '旺旺号', '初评时间', 'SKU', '初评', '晒图/视频', '有用', '追评', '追评时间', '追评晒图/视频']
+    Top text-like cols:
+      - 晒图/视频: score=4.40, name_hit=0, nonnull=1.00, avg_len=281.9, long_text_ratio=0.90
+      - 初评: score=3.39, name_hit=0, nonnull=1.00, avg_len=44.5, long_text_ratio=1.00
+      - SKU: score=2.80, name_hit=0, nonnull=1.00, avg_len=15.0, long_text_ratio=1.00
+      - 初评时间: score=2.70, name_hit=0, nonnull=1.00, avg_len=10.0, long_text_ratio=1.00
+      - 旺旺号: score=1.58, name_hit=0, nonnull=1.00, avg_len=4.0, long_text_ratio=0.00
+      - 追评晒图/视频: score=1.54, name_hit=0, nonnull=1.00, avg_len=2.0, long_text_ratio=0.00
+  SHEET: 3.xlsx__1
+    Shape: 10 rows x 10 cols
+    Columns: ['SKU', '昵称', '买家所在地区', '首次评价', '首评时间', '首评图片', '视频', '追加评价', '追评图片', '商家回复']
+    Top text-like cols:
+      - 首次评价: score=6.44, name_hit=1, nonnull=1.00, avg_len=97.0, long_text_ratio=1.00
+      - 首评图片: score=4.40, name_hit=0, nonnull=1.00, avg_len=244.6, long_text_ratio=0.90
+      - 视频: score=3.30, name_hit=0, nonnull=0.20, avg_len=136.0, long_text_ratio=1.00
+      - 首评时间: score=2.88, name_hit=0, nonnull=1.00, avg_len=19.0, long_text_ratio=1.00
+      - SKU: score=2.82, name_hit=0, nonnull=1.00, avg_len=15.8, long_text_ratio=1.00
+      - 追加评价: score=2.00, name_hit=1, nonnull=0.00, avg_len=0.0, long_text_ratio=0.00
+  SHEET: 4.xlsx__1
+    Shape: 10 rows x 10 cols
+    Columns: ['SKU', '昵称', '买家所在地区', '首次评价', '首评时间', '首评图片', '视频', '追加评价', '追评图片', '商家回复']
+    Top text-like cols:
+      - 首次评价: score=6.12, name_hit=1, nonnull=1.00, avg_len=80.9, long_text_ratio=1.00
+      - 首评图片: score=4.50, name_hit=0, nonnull=1.00, avg_len=246.1, long_text_ratio=1.00
+      - 首评时间: score=2.88, name_hit=0, nonnull=1.00, avg_len=19.0, long_text_ratio=1.00
+      - SKU: score=2.76, name_hit=0, nonnull=1.00, avg_len=13.1, long_text_ratio=1.00
+      - 昵称: score=2.27, name_hit=0, nonnull=1.00, avg_len=8.4, long_text_ratio=0.60
+      - 追加评价: score=2.00, name_hit=1, nonnull=0.00, avg_len=0.0, long_text_ratio=0.00
+  SHEET: 5.xlsx__1
+    Shape: 10 rows x 10 cols
+    Columns: ['序号', '旺旺号', '初评时间', 'SKU', '初评', '晒图/视频', '有用', '追评', '追评时间', '追评晒图/视频']
+    Top text-like cols:
+      - 晒图/视频: score=4.40, name_hit=0, nonnull=1.00, avg_len=277.4, long_text_ratio=0.90
+      - 初评: score=3.44, name_hit=0, nonnull=1.00, avg_len=51.9, long_text_ratio=0.90
+      - SKU: score=2.87, name_hit=0, nonnull=1.00, avg_len=18.4, long_text_ratio=1.00
+      - 初评时间: score=2.70, name_hit=0, nonnull=1.00, avg_len=10.0, long_text_ratio=1.00
+      - 旺旺号: score=1.58, name_hit=0, nonnull=1.00, avg_len=4.0, long_text_ratio=0.00
+      - 追评晒图/视频: score=1.54, name_hit=0, nonnull=1.00, avg_len=2.0, long_text_ratio=0.00
+  SHEET: 6.xlsx__1
+    Shape: 10 rows x 10 cols
+    Columns: ['SKU', '昵称', '买家所在地区', '首次评价', '首评时间', '首评图片', '视频', '追加评价', '追评图片', '商家回复']
+    Top text-like cols:
+      - 首次评价: score=6.50, name_hit=1, nonnull=1.00, avg_len=115.7, long_text_ratio=1.00
+      - 首评图片: score=4.30, name_hit=0, nonnull=1.00, avg_len=257.4, long_text_ratio=0.80
+      - 视频: score=4.20, name_hit=0, nonnull=0.80, avg_len=154.2, long_text_ratio=1.00
+      - 首评时间: score=2.88, name_hit=0, nonnull=1.00, avg_len=19.0, long_text_ratio=1.00
+      - SKU: score=2.86, name_hit=0, nonnull=1.00, avg_len=18.0, long_text_ratio=1.00
+      - 追加评价: score=2.00, name_hit=1, nonnull=0.00, avg_len=0.0, long_text_ratio=0.00
+  SHEET: B站社群_1772353823741.xlsx__sheet1
+    Shape: 10 rows x 14 cols
+    Columns: ['序号', '正文', '_clueid', '_fullpath', '_realpath', '_theme', '_middle', '_createdate', '_pageno', '_actionno', '_actionvalue', '_prestamp', '_currentstamp', '_importtime']
+    Top text-like cols:
+      - _fullpath: score=4.50, name_hit=0, nonnull=1.00, avg_len=129.0, long_text_ratio=1.00
+      - _realpath: score=4.50, name_hit=0, nonnull=1.00, avg_len=129.0, long_text_ratio=1.00
+      - 正文: score=4.18, name_hit=1, nonnull=0.90, avg_len=8.1, long_text_ratio=0.67
+      - _currentstamp: score=3.52, name_hit=0, nonnull=1.00, avg_len=51.0, long_text_ratio=1.00
+      - _createdate: score=2.84, name_hit=0, nonnull=1.00, avg_len=17.0, long_text_ratio=1.00
+      - _prestamp: score=2.80, name_hit=0, nonnull=1.00, avg_len=15.0, long_text_ratio=1.00
+  SHEET: 京东评论_1772106892334.xlsx__sheet1
+    Shape: 10 rows x 14 cols
+    Columns: ['序号', '正文', '_clueid', '_fullpath', '_realpath', '_theme', '_middle', '_createdate', '_pageno', '_actionno', '_actionvalue', '_prestamp', '_currentstamp', '_importtime']
+    Top text-like cols:
+      - 正文: score=6.50, name_hit=1, nonnull=1.00, avg_len=121.2, long_text_ratio=1.00
+      - _currentstamp: score=3.52, name_hit=0, nonnull=1.00, avg_len=51.0, long_text_ratio=1.00
+      - _fullpath: score=3.28, name_hit=0, nonnull=1.00, avg_len=39.0, long_text_ratio=1.00
+      - _realpath: score=3.28, name_hit=0, nonnull=1.00, avg_len=39.0, long_text_ratio=1.00
+      - _createdate: score=2.85, name_hit=0, nonnull=1.00, avg_len=17.7, long_text_ratio=1.00
+      - _prestamp: score=2.80, name_hit=0, nonnull=1.00, avg_len=15.0, long_text_ratio=1.00
+  SHEET: 动漫手办评论_1772352164263.xlsx__shee
+    Shape: 7 rows x 14 cols
+    Columns: ['序号', '正文', '_clueid', '_fullpath', '_realpath', '_theme', '_middle', '_createdate', '_pageno', '_actionno', '_actionvalue', '_prestamp', '_currentstamp', '_importtime']
+    Top text-like cols:
+      - 正文: score=4.97, name_hit=1, nonnull=1.00, avg_len=23.7, long_text_ratio=1.00
+      - _currentstamp: score=3.52, name_hit=0, nonnull=1.00, avg_len=51.0, long_text_ratio=1.00
+      - _fullpath: score=3.22, name_hit=0, nonnull=1.00, avg_len=36.0, long_text_ratio=1.00
+      - _realpath: score=3.22, name_hit=0, nonnull=1.00, avg_len=36.0, long_text_ratio=1.00
+      - _createdate: score=2.82, name_hit=0, nonnull=1.00, avg_len=16.0, long_text_ratio=1.00
+      - _prestamp: score=2.80, name_hit=0, nonnull=1.00, avg_len=15.0, long_text_ratio=1.00
+  SHEET: 市场调研情感分析【社交媒体】.xlsx__小红书
+    Shape: 10 rows x 7 cols
+    Columns: ['小红书', '笔记名', '作者', '笔记内容', '发布时间', '点赞量', '网址']
+    Top text-like cols:
+      - 笔记内容: score=6.50, name_hit=1, nonnull=1.00, avg_len=564.2, long_text_ratio=1.00
+      - 网址: score=4.50, name_hit=0, nonnull=1.00, avg_len=137.0, long_text_ratio=1.00
+      - 笔记名: score=2.87, name_hit=0, nonnull=1.00, avg_len=18.7, long_text_ratio=1.00
+      - 发布时间: score=2.70, name_hit=0, nonnull=1.00, avg_len=10.0, long_text_ratio=1.00
+      - 作者: score=2.32, name_hit=0, nonnull=1.00, avg_len=6.1, long_text_ratio=0.70
+      - 点赞量: score=1.56, name_hit=0, nonnull=1.00, avg_len=2.9, long_text_ratio=0.00
+  SHEET: 市场调研情感分析【社交媒体】.xlsx__知乎
+    Shape: 10 rows x 3 cols
+    Columns: ['Unnamed: 0', '标题', '内容']
+    Top text-like cols:
+      - 内容: score=6.50, name_hit=1, nonnull=1.00, avg_len=2233.2, long_text_ratio=1.00
+      - 标题: score=5.05, name_hit=1, nonnull=1.00, avg_len=27.7, long_text_ratio=1.00
+      - Unnamed: 0: score=0.00, name_hit=0, nonnull=0.00, avg_len=0.0, long_text_ratio=0.00
+  SHEET: 棉花娃娃_1772352382739.xlsx__sheet1
+    Shape: 7 rows x 14 cols
+    Columns: ['序号', '正文', '_clueid', '_fullpath', '_realpath', '_theme', '_middle', '_createdate', '_pageno', '_actionno', '_actionvalue', '_prestamp', '_currentstamp', '_importtime']
+    Top text-like cols:
+      - 正文: score=5.22, name_hit=1, nonnull=1.00, avg_len=43.0, long_text_ratio=0.86
+      - _currentstamp: score=3.52, name_hit=0, nonnull=1.00, avg_len=51.0, long_text_ratio=1.00
+      - _fullpath: score=3.22, name_hit=0, nonnull=1.00, avg_len=36.0, long_text_ratio=1.00
+      - _realpath: score=3.22, name_hit=0, nonnull=1.00, avg_len=36.0, long_text_ratio=1.00
+      - _createdate: score=2.82, name_hit=0, nonnull=1.00, avg_len=16.0, long_text_ratio=1.00
+      - _prestamp: score=2.80, name_hit=0, nonnull=1.00, avg_len=15.0, long_text_ratio=1.00
+  SHEET: 社群评论_1772105173793.xlsx__sheet1
+    Shape: 10 rows x 14 cols
+    Columns: ['序号', '正文', '_clueid', '_fullpath', '_realpath', '_theme', '_middle', '_createdate', '_pageno', '_actionno', '_actionvalue', '_prestamp', '_currentstamp', '_importtime']
+    Top text-like cols:
+      - 正文: score=4.93, name_hit=1, nonnull=1.00, avg_len=26.7, long_text_ratio=0.90
+      - _currentstamp: score=3.52, name_hit=0, nonnull=1.00, avg_len=51.0, long_text_ratio=1.00
+      - _fullpath: score=3.22, name_hit=0, nonnull=1.00, avg_len=36.0, long_text_ratio=1.00
+      - _realpath: score=3.22, name_hit=0, nonnull=1.00, avg_len=36.0, long_text_ratio=1.00
+      - _createdate: score=2.86, name_hit=0, nonnull=1.00, avg_len=17.9, long_text_ratio=1.00
+      - _prestamp: score=2.80, name_hit=0, nonnull=1.00, avg_len=15.0, long_text_ratio=1.00
+  SHEET: 童年IP社群_1772354429067.xlsx__shee
+    Shape: 10 rows x 14 cols
+    Columns: ['序号', '正文', '_clueid', '_fullpath', '_realpath', '_theme', '_middle', '_createdate', '_pageno', '_actionno', '_actionvalue', '_prestamp', '_currentstamp', '_importtime']
+    Top text-like cols:
+      - _fullpath: score=4.50, name_hit=0, nonnull=1.00, avg_len=129.0, long_text_ratio=1.00
+      - _realpath: score=4.50, name_hit=0, nonnull=1.00, avg_len=129.0, long_text_ratio=1.00
+      - 正文: score=4.47, name_hit=1, nonnull=1.00, avg_len=8.6, long_text_ratio=0.80
+      - _currentstamp: score=3.52, name_hit=0, nonnull=1.00, avg_len=51.0, long_text_ratio=1.00
+      - _createdate: score=2.84, name_hit=0, nonnull=1.00, avg_len=17.0, long_text_ratio=1.00
+      - _prestamp: score=2.80, name_hit=0, nonnull=1.00, avg_len=15.0, long_text_ratio=1.00
+  SHEET: 谷圈评论_1772351902538.xlsx__sheet1
+    Shape: 9 rows x 14 cols
+    Columns: ['序号', '正文', '_clueid', '_fullpath', '_realpath', '_theme', '_middle', '_createdate', '_pageno', '_actionno', '_actionvalue', '_prestamp', '_currentstamp', '_importtime']
+    Top text-like cols:
+      - 正文: score=5.94, name_hit=1, nonnull=1.00, avg_len=71.8, long_text_ratio=1.00
+      - _currentstamp: score=3.52, name_hit=0, nonnull=1.00, avg_len=51.0, long_text_ratio=1.00
+      - _fullpath: score=3.22, name_hit=0, nonnull=1.00, avg_len=36.0, long_text_ratio=1.00
+      - _realpath: score=3.22, name_hit=0, nonnull=1.00, avg_len=36.0, long_text_ratio=1.00
+      - _createdate: score=2.84, name_hit=0, nonnull=1.00, avg_len=17.0, long_text_ratio=1.00
+      - _prestamp: score=2.80, name_hit=0, nonnull=1.00, avg_len=15.0, long_text_ratio=1.00
+
+FILE: data_profile_summary.xlsx
+  Sheets: ['sheet_summary', 'column_profile']
+  SHEET: sheet_summary
+    Shape: 15 rows x 6 cols
+    Columns: ['file', 'sheet', 'n_rows', 'n_cols', 'columns', 'top_text_cols']
+    Top text-like cols:
+      - top_text_cols: score=6.10, name_hit=1, nonnull=1.00, avg_len=80.1, long_text_ratio=1.00
+      - columns: score=4.30, name_hit=0, nonnull=1.00, avg_len=90.1, long_text_ratio=1.00
+      - file: score=2.82, name_hit=0, nonnull=1.00, avg_len=15.9, long_text_ratio=1.00
+      - sheet: score=2.04, name_hit=0, nonnull=1.00, avg_len=3.5, long_text_ratio=0.47
+      - n_rows: score=1.55, name_hit=0, nonnull=1.00, avg_len=2.4, long_text_ratio=0.00
+      - n_cols: score=1.54, name_hit=0, nonnull=1.00, avg_len=1.9, long_text_ratio=0.00
+  SHEET: column_profile
+    Shape: 168 rows x 11 cols
+    Columns: ['col', 'dtype', 'n_rows', 'n_nonnull', 'missing', 'missing_rate', 'nunique', 'examples', 'num_stats_json', 'file', 'sheet']
+    Top text-like cols:
+      - examples: score=4.22, name_hit=0, nonnull=0.89, avg_len=103.2, long_text_ratio=0.89
+      - file: score=2.84, name_hit=0, nonnull=1.00, avg_len=17.0, long_text_ratio=1.00
+      - num_stats_json: score=2.70, name_hit=0, nonnull=0.32, avg_len=61.2, long_text_ratio=1.00
+      - dtype: score=2.42, name_hit=0, nonnull=1.00, avg_len=5.9, long_text_ratio=0.80
+      - col: score=2.17, name_hit=0, nonnull=1.00, avg_len=6.2, long_text_ratio=0.54
+      - sheet: score=2.16, name_hit=0, nonnull=1.00, avg_len=4.0, long_text_ratio=0.58
+
+FILE: 京东评论_1772106892334.xlsx
+  Sheets: ['sheet1']
+  SHEET: sheet1
+    Shape: 165 rows x 14 cols
+    Columns: ['序号', '正文', '_clueid', '_fullpath', '_realpath', '_theme', '_middle', '_createdate', '_pageno', '_actionno', '_actionvalue', '_prestamp', '_currentstamp', '_importtime']
+    Top text-like cols:
+      - 正文: score=6.50, name_hit=1, nonnull=1.00, avg_len=123.8, long_text_ratio=1.00
+      - _currentstamp: score=3.52, name_hit=0, nonnull=1.00, avg_len=51.0, long_text_ratio=1.00
+      - _fullpath: score=3.28, name_hit=0, nonnull=1.00, avg_len=39.0, long_text_ratio=1.00
+      - _realpath: score=3.28, name_hit=0, nonnull=1.00, avg_len=39.0, long_text_ratio=1.00
+      - _createdate: score=2.86, name_hit=0, nonnull=1.00, avg_len=17.8, long_text_ratio=1.00
+      - _prestamp: score=2.80, name_hit=0, nonnull=1.00, avg_len=15.0, long_text_ratio=1.00
+
+FILE: 动漫手办评论_1772352164263.xlsx
+  Sheets: ['sheet1']
+  SHEET: sheet1
+    Shape: 7 rows x 14 cols
+    Columns: ['序号', '正文', '_clueid', '_fullpath', '_realpath', '_theme', '_middle', '_createdate', '_pageno', '_actionno', '_actionvalue', '_prestamp', '_currentstamp', '_importtime']
+    Top text-like cols:
+      - 正文: score=4.97, name_hit=1, nonnull=1.00, avg_len=23.7, long_text_ratio=1.00
+      - _currentstamp: score=3.52, name_hit=0, nonnull=1.00, avg_len=51.0, long_text_ratio=1.00
+      - _fullpath: score=3.22, name_hit=0, nonnull=1.00, avg_len=36.0, long_text_ratio=1.00
+      - _realpath: score=3.22, name_hit=0, nonnull=1.00, avg_len=36.0, long_text_ratio=1.00
+      - _createdate: score=2.82, name_hit=0, nonnull=1.00, avg_len=16.0, long_text_ratio=1.00
+      - _prestamp: score=2.80, name_hit=0, nonnull=1.00, avg_len=15.0, long_text_ratio=1.00
+
+FILE: 市场调研情感分析【社交媒体】.xlsx
+  Sheets: ['小红书', '知乎']
+  SHEET: 小红书
+    Shape: 102 rows x 7 cols
+    Columns: ['小红书', '笔记名', '作者', '笔记内容', '发布时间', '点赞量', '网址']
+    Top text-like cols:
+      - 笔记内容: score=6.50, name_hit=1, nonnull=1.00, avg_len=436.9, long_text_ratio=1.00
+      - 网址: score=4.50, name_hit=0, nonnull=1.00, avg_len=144.4, long_text_ratio=1.00
+      - 笔记名: score=2.84, name_hit=0, nonnull=1.00, avg_len=17.3, long_text_ratio=0.99
+      - 发布时间: score=2.62, name_hit=0, nonnull=1.00, avg_len=9.7, long_text_ratio=0.92
+      - 作者: score=2.22, name_hit=0, nonnull=1.00, avg_len=6.4, long_text_ratio=0.59
+      - 点赞量: score=1.55, name_hit=0, nonnull=1.00, avg_len=2.5, long_text_ratio=0.00
+  SHEET: 知乎
+    Shape: 100 rows x 3 cols
+    Columns: ['Unnamed: 0', '标题', '内容']
+    Top text-like cols:
+      - 内容: score=6.50, name_hit=1, nonnull=1.00, avg_len=1900.6, long_text_ratio=1.00
+      - 标题: score=4.99, name_hit=1, nonnull=0.99, avg_len=25.8, long_text_ratio=0.99
+      - Unnamed: 0: score=0.00, name_hit=0, nonnull=0.00, avg_len=0.0, long_text_ratio=0.00
+
+FILE: 棉花娃娃_1772352382739.xlsx
+  Sheets: ['sheet1']
+  SHEET: sheet1
+    Shape: 7 rows x 14 cols
+    Columns: ['序号', '正文', '_clueid', '_fullpath', '_realpath', '_theme', '_middle', '_createdate', '_pageno', '_actionno', '_actionvalue', '_prestamp', '_currentstamp', '_importtime']
+    Top text-like cols:
+      - 正文: score=5.22, name_hit=1, nonnull=1.00, avg_len=43.0, long_text_ratio=0.86
+      - _currentstamp: score=3.52, name_hit=0, nonnull=1.00, avg_len=51.0, long_text_ratio=1.00
+      - _fullpath: score=3.22, name_hit=0, nonnull=1.00, avg_len=36.0, long_text_ratio=1.00
+      - _realpath: score=3.22, name_hit=0, nonnull=1.00, avg_len=36.0, long_text_ratio=1.00
+      - _createdate: score=2.82, name_hit=0, nonnull=1.00, avg_len=16.0, long_text_ratio=1.00
+      - _prestamp: score=2.80, name_hit=0, nonnull=1.00, avg_len=15.0, long_text_ratio=1.00
+
+FILE: 社群评论_1772105173793.xlsx
+  Sheets: ['sheet1']
+  SHEET: sheet1
+    Shape: 18 rows x 14 cols
+    Columns: ['序号', '正文', '_clueid', '_fullpath', '_realpath', '_theme', '_middle', '_createdate', '_pageno', '_actionno', '_actionvalue', '_prestamp', '_currentstamp', '_importtime']
+    Top text-like cols:
+      - 正文: score=5.18, name_hit=1, nonnull=1.00, avg_len=37.0, long_text_ratio=0.94
+      - _currentstamp: score=3.52, name_hit=0, nonnull=1.00, avg_len=51.0, long_text_ratio=1.00
+      - _fullpath: score=3.22, name_hit=0, nonnull=1.00, avg_len=36.0, long_text_ratio=1.00
+      - _realpath: score=3.22, name_hit=0, nonnull=1.00, avg_len=36.0, long_text_ratio=1.00
+      - _createdate: score=2.85, name_hit=0, nonnull=1.00, avg_len=17.5, long_text_ratio=1.00
+      - _prestamp: score=2.80, name_hit=0, nonnull=1.00, avg_len=15.0, long_text_ratio=1.00
+
+FILE: 童年IP社群_1772354429067.xlsx
+  Sheets: ['sheet1']
+  SHEET: sheet1
+    Shape: 30 rows x 14 cols
+    Columns: ['序号', '正文', '_clueid', '_fullpath', '_realpath', '_theme', '_middle', '_createdate', '_pageno', '_actionno', '_actionvalue', '_prestamp', '_currentstamp', '_importtime']
+    Top text-like cols:
+      - _fullpath: score=4.50, name_hit=0, nonnull=1.00, avg_len=129.0, long_text_ratio=1.00
+      - _realpath: score=4.50, name_hit=0, nonnull=1.00, avg_len=129.0, long_text_ratio=1.00
+      - 正文: score=4.31, name_hit=1, nonnull=1.00, avg_len=8.6, long_text_ratio=0.63
+      - _currentstamp: score=3.52, name_hit=0, nonnull=1.00, avg_len=51.0, long_text_ratio=1.00
+      - _createdate: score=2.84, name_hit=0, nonnull=1.00, avg_len=17.0, long_text_ratio=1.00
+      - _prestamp: score=2.80, name_hit=0, nonnull=1.00, avg_len=15.0, long_text_ratio=1.00
+
+FILE: 谷圈评论_1772351902538.xlsx
+  Sheets: ['sheet1']
+  SHEET: sheet1
+    Shape: 9 rows x 14 cols
+    Columns: ['序号', '正文', '_clueid', '_fullpath', '_realpath', '_theme', '_middle', '_createdate', '_pageno', '_actionno', '_actionvalue', '_prestamp', '_currentstamp', '_importtime']
+    Top text-like cols:
+      - 正文: score=5.94, name_hit=1, nonnull=1.00, avg_len=71.8, long_text_ratio=1.00
+      - _currentstamp: score=3.52, name_hit=0, nonnull=1.00, avg_len=51.0, long_text_ratio=1.00
+      - _fullpath: score=3.22, name_hit=0, nonnull=1.00, avg_len=36.0, long_text_ratio=1.00
+      - _realpath: score=3.22, name_hit=0, nonnull=1.00, avg_len=36.0, long_text_ratio=1.00
+      - _createdate: score=2.84, name_hit=0, nonnull=1.00, avg_len=17.0, long_text_ratio=1.00
+      - _prestamp: score=2.80, name_hit=0, nonnull=1.00, avg_len=15.0, long_text_ratio=1.00
