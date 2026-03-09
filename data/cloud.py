@@ -8,7 +8,7 @@ import random
 # ===== 路径改这里 =====
 KITTY_IMG = r"neg.jpg"                      # 你的kitty图片（用于提轮廓mask）
 FONT = r"C:\Windows\Fonts\msyh.ttc"         # 中文字体
-OUT_PNG = r"wordcloud_tear_shape.png"      # 输出词云
+OUT_PNG = r"wordcloud_mouse_shape.png"      # 输出词云
 
 # 词频表：二选一
 POS_XLSX = r"pos_top_words.xlsx"            # 列名 Word/Count

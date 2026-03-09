@@ -89,6 +89,27 @@ st.markdown(
     }
     .muted { color: #64748b; }
 
+    /* 胶囊标签 */
+    .pill {
+        display:inline-block;
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: rgba(37,99,235,.12);
+        color: #1d4ed8;
+        font-weight: 800;
+        margin-top: 6px;
+        margin-bottom: 10px;
+    }
+    .pill2 {
+        display:inline-block;
+        padding: 7px 12px;
+        border-radius: 999px;
+        background: rgba(236,72,153,.12);
+        color: #be185d;
+        font-weight: 800;
+        margin-top: 8px;
+    }
+
     /* 按钮更圆润 */
     div.stButton>button {
         border-radius: 14px;
@@ -105,61 +126,142 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
+st.markdown(
+    """
+    <style>
+    /* ============ 画像卡美化 ============ */
+    .profile-wrap{
+        background: linear-gradient(180deg, rgba(99,102,241,.06), rgba(236,72,153,.05));
+        border: 1px solid rgba(148,163,184,.35);
+        border-radius: 22px;
+        padding: 18px;
+        box-shadow: 0 18px 40px rgba(2,6,23,.10);
+    }
+    .profile-head{
+        display:flex; align-items:flex-end; justify-content:space-between;
+        gap: 12px; margin-bottom: 14px;
+    }
+    .profile-title{
+        font-size: 1.75rem; font-weight: 950; letter-spacing:.3px;
+        margin: 0;
+    }
+    .profile-sub{
+        color:#64748b; font-size:.95rem; margin: 4px 0 0 0;
+    }
+    .badge{
+        display:inline-flex; align-items:center; gap:8px;
+        padding: 7px 12px;
+        border-radius: 999px;
+        background: rgba(37,99,235,.12);
+        color: #1d4ed8;
+        font-weight: 900;
+        font-size: .92rem;
+        border: 1px solid rgba(37,99,235,.18);
+    }
+    .badge i{ opacity:.9; font-style:normal; }
 
+    .mini-card{
+        background: rgba(255,255,255,.85);
+        border: 1px solid rgba(148,163,184,.28);
+        border-radius: 18px;
+        padding: 14px 14px;
+        box-shadow: 0 10px 22px rgba(2,6,23,.06);
+        margin-bottom: 12px;
+    }
+    .sec-title{
+        font-size: 1.05rem;
+        font-weight: 900;
+        margin: 0 0 10px 0;
+    }
+    .kv{
+        display:grid;
+        grid-template-columns: 92px 1fr;
+        gap: 8px 10px;
+        align-items: baseline;
+        font-size: .98rem;
+        line-height: 1.55;
+    }
+    .k{ color:#64748b; font-weight:700; }
+    .v{ color:#0f172a; font-weight:650; }
+
+    .chips{ display:flex; flex-wrap:wrap; gap:8px; margin-top: 6px; }
+    .chip{
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: rgba(236,72,153,.10);
+        color:#be185d;
+        font-weight: 800;
+        font-size: .90rem;
+        border: 1px solid rgba(236,72,153,.18);
+    }
+
+    .list{
+        margin: 0;
+        padding-left: 1.0rem;
+    }
+    .list li{
+        margin: .35rem 0;
+        line-height: 1.55;
+        font-size: .98rem;
+        color:#0f172a;
+    }
+
+    .right-card{
+        background: rgba(255,255,255,.85);
+        border: 1px solid rgba(148,163,184,.28);
+        border-radius: 18px;
+        padding: 14px 14px;
+        box-shadow: 0 10px 22px rgba(2,6,23,.06);
+        height: 100%;
+    }
+    .img-title{
+        font-size: 1.02rem;
+        font-weight: 900;
+        margin: 0 0 10px 0;
+    }
+
+    /* 控制图片更好看：居中 + 柔和阴影 */
+    .stImage img{
+        border-radius: 16px;
+        box-shadow: 0 16px 40px rgba(2,6,23,.12);
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 # -----------------------------
 # 抠像：把棋盘格背景变透明 PNG
 # -----------------------------
 def cutout_checkerboard_to_png(in_path: Path, out_path: Path, tol: int = 22) -> bool:
-    """
-    针对灰白棋盘格背景的卡通图：
-    - 从四角 flood fill 找背景区域
-    - 背景 alpha=0，主体 alpha=255
-    返回是否成功生成
-    """
     img = cv2.imread(str(in_path), cv2.IMREAD_COLOR)
     if img is None:
         return False
 
     h, w = img.shape[:2]
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-
-    # 背景一般接近白/浅灰，先轻微模糊降低棋盘格边缘干扰
     blur = cv2.GaussianBlur(gray, (5, 5), 0)
 
-    # flood fill 需要 mask 比原图大 2
     mask = np.zeros((h + 2, w + 2), np.uint8)
-
-    # 以四个角为种子填充背景
     seeds = [(0, 0), (w - 1, 0), (0, h - 1), (w - 1, h - 1)]
     filled = np.zeros((h, w), np.uint8)
 
     for sx, sy in seeds:
-        # 每次 floodfill 都要新 mask
         mask[:] = 0
         ff = blur.copy()
-
-        # 这里的 loDiff/upDiff 控制“相近颜色”的范围
-        # tol 越大抠得越狠
         lo = tol
         up = tol
-        _, _, _, _ = cv2.floodFill(ff, mask, (sx, sy), 0, loDiff=lo, upDiff=up)
-
-        # floodFill 后 mask 的 1 区域表示被填充区域（背景）
+        cv2.floodFill(ff, mask, (sx, sy), 0, loDiff=lo, upDiff=up)
         region = (mask[1:-1, 1:-1] > 0).astype(np.uint8) * 255
         filled = cv2.bitwise_or(filled, region)
 
-    # 形态学闭运算：补掉棋盘格造成的“漏网”孔洞
     kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (9, 9))
     filled = cv2.morphologyEx(filled, cv2.MORPH_CLOSE, kernel, iterations=2)
 
-    # 背景 = filled，主体 = 反过来
     fg = cv2.bitwise_not(filled)
 
-    # 构建 RGBA
     rgba = cv2.cvtColor(img, cv2.COLOR_BGR2BGRA)
-    rgba[:, :, 3] = fg  # alpha
+    rgba[:, :, 3] = fg
 
-    # 如果主体太少，说明抠错了，直接失败
     if fg.mean() < 15:
         return False
 
@@ -167,9 +269,6 @@ def cutout_checkerboard_to_png(in_path: Path, out_path: Path, tol: int = 22) -> 
     return True
 
 def get_display_image(type_name: str, original_path: Path) -> Path:
-    """
-    优先返回抠好透明背景的 png；没有则尝试生成；生成失败则返回原图
-    """
     out_png = CUT_DIR / f"{type_name}.png"
     if out_png.exists():
         return out_png
@@ -193,6 +292,7 @@ def load_neg_words(path: Path) -> pd.DataFrame:
 
 pos_df = load_pos_words(POS_XLSX) if POS_XLSX.exists() else pd.DataFrame(columns=["词", "频次"])
 neg_df = load_neg_words(NEG_XLSX) if NEG_XLSX.exists() else pd.DataFrame(columns=["词", "频次"])
+
 
 # -----------------------------
 # 测评题库
@@ -222,12 +322,11 @@ TYPE_DESC = {
     "理智过客": "你整体更谨慎，倾向低风险试水或以送礼为主。"
 }
 
-# 你的人格卡通图（把路径换成你的文件名）
 TYPE_IMG = {
     "社交孔雀": IMG_DIR / "social_peacock.jpg",
     "圈层海王": IMG_DIR / "circle_sea.jpg",
     "佛系水豚": IMG_DIR / "chill_cap.jpg",
-    "理智过客": IMG_DIR / "rational_guest.jpg",  # 你这个例子
+    "理智过客": IMG_DIR / "rational_guest.jpg",
 }
 
 def infer_type(avg: dict) -> str:
@@ -244,7 +343,7 @@ def infer_type(avg: dict) -> str:
 
 
 # -----------------------------
-# 推荐库（沿用你的）
+# 推荐库
 # -----------------------------
 RECO = {
     "社交孔雀": {
@@ -333,6 +432,123 @@ RECO = {
     },
 }
 
+# -----------------------------
+# 消费者画像模板（用于画像卡）
+# -----------------------------
+PERSONA_PROFILE = {
+    "社交孔雀": {
+        "title": "社交打卡型用户",
+        "traits": ["爱分享、爱开箱", "追求新鲜感与话题", "容易被联名/限定刺激"],
+        "pay_items": ["盲盒/抽选", "联名限定周边", "线下快闪体验"],
+        "price": "100–500元/月（热度高时可能更高）",
+    },
+    "圈层海王": {
+        "title": "圈层归属型用户",
+        "traits": ["围绕IP长期收集", "重视同好与归属", "更在意系列完整度"],
+        "pay_items": ["IP周边/谷子", "棉花娃娃及配件", "社群活动/展会"],
+        "price": "100–300元/月（随追更/补款波动）",
+    },
+    "佛系水豚": {
+        "title": "悦己治愈型用户",
+        "traits": ["为自己解压治愈", "重视手感/颜值/质感", "不追热点，偏少而精"],
+        "pay_items": ["治愈桌搭摆件", "毛绒/解压小物", "高口碑手办/摆件"],
+        "price": "50–300元/月（更看重品质稳定）",
+    },
+    "理智过客": {
+        "title": "理性低涉入型用户",
+        "traits": ["不常买，更多试水/送礼", "价格敏感，讨厌溢价", "优先可退换与口碑"],
+        "pay_items": ["基础款试水", "礼赠向联名小件", "文具/生活小物"],
+        "price": "≤100元/月（节日送礼时上升）",
+    },
+}
+
+def render_persona_card(user_type: str, avatar_img: Image.Image, user_info: dict):
+    prof = PERSONA_PROFILE[user_type]
+
+    gender = user_info.get("gender", "—")
+    age = user_info.get("age", "—")
+    edu = user_info.get("edu", "—")
+    job = user_info.get("job", "—")
+    city = user_info.get("city", "—")
+    income = user_info.get("income", "—")
+    purpose = user_info.get("purpose", "—")
+
+    title = prof.get("title", "消费者画像")
+    subtitle = "基于测评结果生成的个性化画像卡"
+
+    st.markdown('<div class="profile-wrap">', unsafe_allow_html=True)
+
+    # ===== 标题行 =====
+    st.markdown(
+        f"""
+        <div class="profile-head">
+          <div>
+            <div class="profile-title">{title}</div>
+            <div class="profile-sub">{subtitle}</div>
+          </div>
+          <div class="badge"><i>✨</i>{user_type}</div>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
+    # ===== 形象示意：单独一行（标题下方），放大居中 =====
+    st.markdown('<div class="right-card" style="padding:18px; margin-bottom: 12px;">', unsafe_allow_html=True)
+    st.markdown('<div class="img-title" style="margin-bottom:12px;">形象示意</div>', unsafe_allow_html=True)
+
+    # 居中 + 放大：中间列更宽
+    c1, c2, c3 = st.columns([0.18, 0.64, 0.18])
+    with c2:
+        st.image(avatar_img, use_container_width=True)
+
+    st.markdown('</div>', unsafe_allow_html=True)
+
+    # ===== 基本信息 & 核心特征：左右两列 =====
+    colL, colR = st.columns([1.2, 1.0], gap="large")
+
+    with colL:
+        st.markdown('<div class="mini-card">', unsafe_allow_html=True)
+        st.markdown('<div class="sec-title">基本信息</div>', unsafe_allow_html=True)
+        st.markdown(
+            f"""
+            <div class="kv">
+              <div class="k">性别</div><div class="v">{gender}</div>
+              <div class="k">年龄段</div><div class="v">{age}</div>
+              <div class="k">学历</div><div class="v">{edu}</div>
+              <div class="k">职业</div><div class="v">{job}</div>
+              <div class="k">地区</div><div class="v">{city}</div>
+              <div class="k">月可支配</div><div class="v">{income}</div>
+              <div class="k">购买目的</div><div class="v">{purpose}</div>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+        st.markdown('</div>', unsafe_allow_html=True)
+
+    with colR:
+        st.markdown('<div class="mini-card">', unsafe_allow_html=True)
+        st.markdown('<div class="sec-title">核心特征</div>', unsafe_allow_html=True)
+        chips = "".join([f"<span class='chip'>{t}</span>" for t in prof.get("traits", [])])
+        st.markdown(f"<div class='chips'>{chips}</div>", unsafe_allow_html=True)
+        st.markdown('</div>', unsafe_allow_html=True)
+
+    # ===== 常见购买项目与价格带：单独一行 =====
+    st.markdown('<div class="mini-card">', unsafe_allow_html=True)
+    st.markdown('<div class="sec-title">常见购买项目与价格带</div>', unsafe_allow_html=True)
+
+    items = prof.get("pay_items", [])
+    if items:
+        li = "".join([f"<li>{x}</li>" for x in items])
+        st.markdown(f"<ul class='list'>{li}</ul>", unsafe_allow_html=True)
+
+    budget = prof.get("price", "—")
+    st.markdown(
+        f"<div class='kv' style='margin-top:10px;'><div class='k'>典型预算</div><div class='v'>{budget}</div></div>",
+        unsafe_allow_html=True
+    )
+    st.markdown('</div>', unsafe_allow_html=True)
+
+    st.markdown('</div>', unsafe_allow_html=True)
 # -----------------------------
 # 词云工具
 # -----------------------------
@@ -464,9 +680,50 @@ if user_type:
 
     st.divider()
 
-    # 同好弹窗
-    if st.button("可能这里有你的同好", use_container_width=True):
+    # 两个按钮：画像卡 + 同好推荐
+    b1, b2 = st.columns(2)
+    with b1:
+        open_profile = st.button("查看我的画像卡", use_container_width=True)
+    with b2:
+        open_reco = st.button("可能这里有你的同好", use_container_width=True)
 
+    # 画像卡弹窗
+    if open_profile:
+        @st.dialog("消费者画像卡")
+        def show_profile():
+            st.write("补充信息可让画像更贴合你本人（不填也能生成）。")
+
+            c1, c2 = st.columns(2)
+            with c1:
+                gender = st.selectbox("性别", ["—", "男", "女", "其他/不便透露"])
+                age = st.selectbox("年龄段", ["—", "18-24", "25-30", "31-40", "41+"])
+                income = st.selectbox("月可支配收入", ["—", "≤5000", "5001-9999", "10000-19999", "20000+"])
+            with c2:
+                edu = st.selectbox("学历", ["—", "大专及以下", "本科", "硕士及以上"])
+                job = st.selectbox("职业", ["—", "学生", "企业职员", "自由职业", "事业单位/公务员", "其他"])
+                city = st.selectbox("地区", ["—", "一线/新一线", "二线", "三线及以下"])
+
+            purpose = st.selectbox("购买目的", ["—", "自我治愈/解压", "社交分享", "圈层收集", "送礼"])
+
+            user_info = {
+                "gender": gender, "age": age, "edu": edu, "job": job,
+                "city": city, "income": income, "purpose": purpose
+            }
+
+            img_path0 = TYPE_IMG.get(user_type)
+            if not (img_path0 and img_path0.exists()):
+                st.warning("未找到该人格的形象图，请检查 images/ 目录。")
+                return
+
+            show_path0 = get_display_image(user_type, img_path0)
+            avatar = Image.open(show_path0)
+
+            render_persona_card(user_type, avatar, user_info)
+
+        show_profile()
+
+    # 同好弹窗
+    if open_reco:
         @st.dialog("同好推荐与选品分析")
         def show_reco():
             st.markdown(f"### 你的类型：{user_type}")
