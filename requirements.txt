@@ -6,3 +6,4 @@ wordcloud
 matplotlib
 Pillow
 opencv-python-headless
+pymysql
