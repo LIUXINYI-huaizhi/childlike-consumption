@@ -783,14 +783,11 @@ import pymysql
 import io
 from datetime import datetime
 
-# -----------------------------
-# 配置 MySQL 连接
-# -----------------------------
-MYSQL_HOST = "rm-bp13xgxw5968020xd9o.mysql.rds.aliyuncs.com"       # 阿里云 RDS 域名
-MYSQL_PORT = 3306                  # 默认 3306
-MYSQL_USER = "fan_circle"
-MYSQL_PASS = "LXYlxy9295!"
-MYSQL_DB   = "fan_circle"          # 已创建数据库
+MYSQL_HOST = st.secrets["mysql"]["host"]
+MYSQL_PORT = int(st.secrets["mysql"]["port"])
+MYSQL_USER = st.secrets["mysql"]["user"]
+MYSQL_PASS = st.secrets["mysql"]["password"]
+MYSQL_DB   = st.secrets["mysql"]["database"]
 
 # 创建连接
 conn = pymysql.connect(
