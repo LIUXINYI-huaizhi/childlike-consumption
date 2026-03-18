@@ -776,3 +776,164 @@ if user_type:
             st.caption("词云由你研究文本数据的高频表达生成，用于解释推荐理由与常见风险。")
 
         show_reco()
+# =============================
+# MySQL 配置（同好广场）
+# =============================
+import pymysql
+import io
+from datetime import datetime
+
+# -----------------------------
+# 配置 MySQL 连接
+# -----------------------------
+MYSQL_HOST = "rm-bp13xgxw5968020xd9o.mysql.rds.aliyuncs.com"       # 阿里云 RDS 域名
+MYSQL_PORT = 3306                  # 默认 3306
+MYSQL_USER = "fan_circle"
+MYSQL_PASS = "LXYlxy9295!"
+MYSQL_DB   = "fan_circle"          # 已创建数据库
+
+# 创建连接
+conn = pymysql.connect(
+    host=MYSQL_HOST,
+    user=MYSQL_USER,
+    password=MYSQL_PASS,
+    database=MYSQL_DB,
+    charset="utf8mb4",
+    cursorclass=pymysql.cursors.DictCursor,
+    autocommit=True
+)
+
+# -----------------------------
+# 初始化表（第一次运行可执行）
+# -----------------------------
+with conn.cursor() as cur:
+    cur.execute("""
+    CREATE TABLE IF NOT EXISTS users (
+        user_id VARCHAR(50) PRIMARY KEY,
+        user_type VARCHAR(50),
+        joined_at DATETIME
+    )
+    """)
+    cur.execute("""
+    CREATE TABLE IF NOT EXISTS posts (
+        post_id INT AUTO_INCREMENT PRIMARY KEY,
+        circle_type VARCHAR(50),
+        user_id VARCHAR(50),
+        content TEXT,
+        image LONGBLOB,
+        created_at DATETIME,
+        likes INT DEFAULT 0
+    )
+    """)
+    cur.execute("""
+    CREATE TABLE IF NOT EXISTS comments (
+        comment_id INT AUTO_INCREMENT PRIMARY KEY,
+        post_id INT,
+        user_id VARCHAR(50),
+        content TEXT,
+        created_at DATETIME,
+        FOREIGN KEY (post_id) REFERENCES posts(post_id) ON DELETE CASCADE
+    )
+    """)
+
+# -----------------------------
+# 同好广场模块
+# -----------------------------
+if user_type:
+    st.markdown("## 同好广场")
+
+    # 自动入圈
+    user_id = st.session_state.get("user_id", f"user_{random.randint(1000,9999)}")
+    with conn.cursor() as cur:
+        cur.execute("""
+            INSERT INTO users (user_id, user_type, joined_at)
+            VALUES (%s,%s,%s)
+            ON DUPLICATE KEY UPDATE user_type=%s, joined_at=%s
+        """, (user_id, user_type, datetime.utcnow(), user_type, datetime.utcnow()))
+
+    # 圈层选择
+    CIRCLE_TYPES = ["社交孔雀","圈层海王","佛系水豚","理智过客"]
+    selected_circle = st.selectbox("圈层选择", CIRCLE_TYPES, index=CIRCLE_TYPES.index(user_type))
+
+    # 发帖功能
+    st.markdown(f"### {selected_circle}区 - 发帖")
+    with st.form("post_form", clear_on_submit=True):
+        post_text = st.text_area("写下你的分享/评论")
+        post_image = st.file_uploader("上传图片 (可选)", type=["png","jpg","jpeg"])
+        submit_post = st.form_submit_button("发帖")
+        if submit_post:
+            image_bytes = post_image.read() if post_image else None
+            with conn.cursor() as cur:
+                cur.execute("""
+                    INSERT INTO posts (circle_type, user_id, content, image, created_at, likes)
+                    VALUES (%s,%s,%s,%s,%s,0)
+                """, (selected_circle, user_id, post_text, image_bytes, datetime.utcnow()))
+            st.success("发帖成功！")
+
+    # 展示帖子列表
+    st.markdown(f"### {selected_circle}区 - 帖子列表")
+    with conn.cursor(pymysql.cursors.DictCursor) as cur:
+        cur.execute("SELECT * FROM posts WHERE circle_type=%s ORDER BY created_at DESC", (selected_circle,))
+        posts = cur.fetchall()
+
+    # 点赞回调
+    def make_like_callback(post_id, state_key):
+        def callback():
+            with conn.cursor() as cur:
+                cur.execute("UPDATE posts SET likes=likes+1 WHERE post_id=%s", (post_id,))
+            st.session_state[state_key] = True
+        return callback
+
+    for post in posts:
+        st.markdown("---")
+        st.markdown(f"**{post.get('user_id','匿名')}** 发表于 {post['created_at'].strftime('%Y-%m-%d %H:%M:%S')}")
+        st.write(post.get("content",""))
+        if post.get("image"):
+            image = Image.open(io.BytesIO(post["image"]))
+            st.image(image, use_container_width=True)
+
+        # 点赞按钮与数量
+        like_state_key = f"liked_{post['post_id']}"   # 状态 key
+        button_key = f"like_btn_{post['post_id']}"     # 按钮 key
+        if like_state_key not in st.session_state:
+            st.session_state[like_state_key] = False
+
+        with st.container():
+            c1, c2 = st.columns([1, 5])
+            with c1:
+                st.button(
+                    "❤️ 点赞",
+                    key=button_key,
+                    on_click=make_like_callback(post['post_id'], like_state_key),
+                    disabled=st.session_state[like_state_key]
+                )
+            with c2:
+                with conn.cursor() as cur:
+                    # 点赞数
+                    cur.execute("SELECT likes FROM posts WHERE post_id=%s", (post['post_id'],))
+                    likes_count = cur.fetchone()["likes"]
+
+                    # 评论数
+                    cur.execute("SELECT COUNT(*) AS comment_count FROM comments WHERE post_id=%s", (post['post_id'],))
+                    comments_count = cur.fetchone()["comment_count"]
+                st.markdown(f"**{likes_count} 人点赞 · {comments_count} 条评论**")
+
+        # 评论区
+        st.markdown("**评论:**")
+        with conn.cursor(pymysql.cursors.DictCursor) as cur:
+            cur.execute("SELECT * FROM comments WHERE post_id=%s ORDER BY created_at ASC", (post['post_id'],))
+            post_comments = cur.fetchall()
+        for comment in post_comments:
+            st.markdown(f"- **{comment.get('user_id','匿名')}**: {comment['content']}")
+
+        # 评论表单
+        with st.form(f"comment_form_{post['post_id']}", clear_on_submit=True):
+            comment_text = st.text_input("写评论")
+            submit_comment = st.form_submit_button("提交评论")
+            if submit_comment and comment_text:
+                with conn.cursor() as cur:
+                    cur.execute("""
+                        INSERT INTO comments (post_id, user_id, content, created_at)
+                        VALUES (%s,%s,%s,%s)
+                    """, (post['post_id'], user_id, comment_text, datetime.utcnow()))
+                st.success("评论成功！")
