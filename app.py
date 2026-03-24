@@ -4,6 +4,7 @@ import uuid
 import random
 from pathlib import Path
 from datetime import datetime
+import base64
 
 import cv2
 import numpy as np
@@ -866,7 +867,7 @@ ABOUT_US = """
 通过测评工具，帮助更多人理解自己的消费心理，找到真正适合自己的情绪陪伴。  
 
 **荣誉墙 / 成果展示**  
-- 采纳证明、表扬信、媒体报道
+- 采纳证明、表扬信
 """
 
 # =========================================================
@@ -1805,8 +1806,23 @@ def render_plaza():
         st.markdown(f"**{post['author_name']}** 发表于 {post['created_at'].strftime('%Y-%m-%d %H:%M:%S')}{badge}")
         if post.get("content"):
             st.write(post["content"])
+
         if post.get("image"):
-            st.image(Image.open(io.BytesIO(post["image"])), use_container_width=True)
+            img = Image.open(io.BytesIO(post["image"]))
+            
+            # 方法一：st.image 限制宽度
+            st.image(img, width=400)  # 约占页面宽度 1/3
+
+        #     # 方法二：用 HTML 居中（可选）
+        #     encoded = base64.b64encode(post["image"]).decode()
+        #     st.markdown(
+        #         f"""
+        #         <div style="display:flex; justify-content:center;">
+        #             <img src="data:image/png;base64,{encoded}" width="400">
+        #         </div>
+        #         """,
+        #         unsafe_allow_html=True
+        # )
 
         like_disabled = has_liked(post["post_id"], user["user_id"])
         c1, c2 = st.columns([1, 5])
