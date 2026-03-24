@@ -254,87 +254,550 @@ TYPE_IMG = {
 RECO = {
     "社交孔雀": {
         "tribe": "或许这里有你的同好：盲盒玩家、开箱党、打卡分享党",
-        "brands_primary": ["泡泡玛特（POP MART）", "TOP TOY（名创优品旗下）", "52TOYS"],
+        "brands_primary": ["泡泡玛特（POP MART）", "TOP TOY（名创优品旗下）", "52TOYS", "迪士尼", "Medicom Toy"],
         "channels": ["官方旗舰店/小程序", "线下门店与快闪", "正规电商自营（减少黄牛风险）"],
+        "same_circle_buys": [
+            {"name": "MEGA SPACE MOLLY 1000%", "brand": "泡泡玛特", "price_range": ">1000元", "tag": "高调展示"},
+            {"name": "KAWS 假日限定玩偶", "brand": "KAWS", "price_range": ">1000元", "tag": "身份象征"},
+            {"name": "Sonny Angel 系列盲盒", "brand": "Sonny Angel", "price_range": "<100元", "tag": "经典拆盒"},
+            {"name": "泡泡玛特 哈利波特系列", "brand": "泡泡玛特", "price_range": "<100元", "tag": "IP热度高"},
+        ],
+        "pitfalls": [
+            "小心“网红爆款”溢价过高，多平台比价再入手。",
+            "晒图时注意隐私，避免暴露家庭地址等信息。"
+        ],
         "items": [
             {
-                "title": "盲盒与联名限定",
-                "types": ["盲盒", "联名限定", "快闪款"],
-                "why": "话题感强，容易获得社交互动与惊喜体验。",
-                "trigger_words": ["抽到", "联名", "喜欢", "可爱", "特别", "这次"],
+                "title": "炫耀感强的限量潮玩",
+                "types": ["盲盒", "限量", "社交货币"],
+                "why": "适合爱分享、爱晒图、享受“拥有稀缺款”成就感的人。",
+                "trigger_words": ["抽到", "隐藏款", "限定", "联名", "喜欢", "可爱", "特别"],
                 "risk_words": ["概率", "重复", "黄牛", "炒价", "溢价", "不值"],
+                "products": [
+                    {
+                        "name": "LABUBU 一代坐坐派对",
+                        "brand": "泡泡玛特",
+                        "price_range": "<100元",
+                        "emotion_tags": ["限量", "社交货币"],
+                        "reason": "盲盒形式，隐藏款稀有，适合晒图炫耀。"
+                    },
+                    {
+                        "name": "BE@RBRICK 100% 限定款",
+                        "brand": "Medicom Toy",
+                        "price_range": ">1000元",
+                        "emotion_tags": ["稀缺", "收藏"],
+                        "reason": "积木熊本身就是潮玩圈的身份象征，晒出来倍有面。"
+                    },
+                    {
+                        "name": "迪士尼 玲娜贝儿中秋限定公仔",
+                        "brand": "迪士尼",
+                        "price_range": "500-1000元",
+                        "emotion_tags": ["社交货币", "节日限定"],
+                        "reason": "限定款难抢，拥有即证明“手速+财力”。"
+                    }
+                ]
             },
             {
-                "title": "线下打卡与开箱分享向",
-                "types": ["门店限定", "活动周边", "展会款"],
-                "why": "更适合拍照分享与现场体验，强化社交氛围。",
-                "trigger_words": ["喜欢", "可爱", "联名", "分享", "开箱", "这次"],
-                "risk_words": ["排队", "断货", "黄牛", "溢价", "不值"],
+                "title": "适合内容分享的设计感产品",
+                "types": ["设计感", "评测向", "内容素材"],
+                "why": "适合喜欢种草、安利、做内容输出的人。",
+                "trigger_words": ["设计", "独特", "分享", "内容", "推荐", "种草"],
+                "risk_words": ["翻车", "做工", "瑕疵", "广告", "信任"],
+                "products": [
+                    {
+                        "name": "SKULLPANDA 温度系列",
+                        "brand": "泡泡玛特",
+                        "price_range": "<100元",
+                        "emotion_tags": ["审美", "专业"],
+                        "reason": "设计感强，适合作为内容素材分享给粉丝。"
+                    },
+                    {
+                        "name": "FARMER BOB 限定款",
+                        "brand": "寻找独角兽",
+                        "price_range": "500-1000元",
+                        "emotion_tags": ["引领", "收藏"],
+                        "reason": "BOB 在圈内辨识度高，适合做KOL展示。"
+                    },
+                    {
+                        "name": "52TOYS 猛兽匣系列",
+                        "brand": "52TOYS",
+                        "price_range": "100-300元",
+                        "emotion_tags": ["创新", "可玩性"],
+                        "reason": "变形玩法独特，适合做深度评测。"
+                    }
+                ]
             },
-        ],
+            {
+                "title": "适合开箱表演和互动展示",
+                "types": ["惊喜", "仪式感", "互动玩法"],
+                "why": "适合喜欢拆盒过程、享受氛围感和展示效果的人。",
+                "trigger_words": ["拆盒", "惊喜", "仪式感", "互动", "直播", "展示"],
+                "risk_words": ["剧透", "重复", "概率", "遮挡", "黄牛"],
+                "products": [
+                    {
+                        "name": "Dimoo 童话系列盲盒",
+                        "brand": "泡泡玛特",
+                        "price_range": "<100元",
+                        "emotion_tags": ["惊喜", "仪式感"],
+                        "reason": "拆盒过程充满戏剧性，适合直播。"
+                    },
+                    {
+                        "name": "若来 超级元气工厂 拆箱盲袋",
+                        "brand": "若来",
+                        "price_range": "100-300元",
+                        "emotion_tags": ["表演", "惊喜"],
+                        "reason": "盲袋形式，层层拆解，直播效果拉满。"
+                    },
+                    {
+                        "name": "迪士尼 奇奇蒂蒂 摇摇乐摆件",
+                        "brand": "迪士尼",
+                        "price_range": "100-300元",
+                        "emotion_tags": ["互动", "可爱"],
+                        "reason": "可以边拆边演示互动玩法。"
+                    }
+                ]
+            },
+            {
+                "title": "热门联名和跟风不易出错款",
+                "types": ["热门", "联名", "大众流行"],
+                "why": "适合想快速跟上热点、买到“不会错”的爆款用户。",
+                "trigger_words": ["热门", "联名", "爆款", "流行", "这次", "可爱"],
+                "risk_words": ["饥饿营销", "溢价", "冲动消费", "排队", "断货"],
+                "products": [
+                    {
+                        "name": "Molly 每日故宫系列",
+                        "brand": "泡泡玛特",
+                        "price_range": "<100元",
+                        "emotion_tags": ["热门", "文化"],
+                        "reason": "故宫IP当下热度高，适合跟风。"
+                    },
+                    {
+                        "name": "LINE FRIENDS 布朗熊 毛绒公仔",
+                        "brand": "LINE",
+                        "price_range": "100-300元",
+                        "emotion_tags": ["流行", "大众"],
+                        "reason": "国民级IP，跟风不出错。"
+                    },
+                    {
+                        "name": "名创优品 三丽鸥联名盲袋",
+                        "brand": "名创优品",
+                        "price_range": "<100元",
+                        "emotion_tags": ["平价", "热门"],
+                        "reason": "价格亲民，紧跟联名热潮。"
+                    }
+                ]
+            }
+        ]
     },
+
     "圈层海王": {
         "tribe": "或许这里有你的同好：谷圈、娃圈、IP收藏党、同好社群",
-        "brands_primary": ["泡泡玛特（联名线）", "名创优品联名", "官方IP店/旗舰店"],
+        "brands_primary": ["泡泡玛特（联名线）", "名创优品联名", "官方IP店/旗舰店", "迪士尼", "万代", "三丽鸥"],
         "channels": ["官方授权渠道（减少盗版）", "同好社群团购需谨慎", "线下IP主题店"],
+        "same_circle_buys": [
+            {"name": "龙珠 Z 超像Art 系列", "brand": "万代", "price_range": "500-1000元", "tag": "怀旧动漫"},
+            {"name": "哆啦A梦 秘密道具 扭蛋", "brand": "万代", "price_range": "<100元", "tag": "童年记忆"},
+            {"name": "三丽鸥 双星仙子 周边", "brand": "三丽鸥", "price_range": "<100元", "tag": "同好社交"},
+            {"name": "EVA 初号机 手办", "brand": "EVA", "price_range": "500-1000元", "tag": "机甲收藏"},
+            {"name": "北京环球影城 小黄人 爆米花桶", "brand": "环球影城", "price_range": "100-300元", "tag": "园区限定"},
+        ],
+        "pitfalls": [
+            "别为了“集齐”而超预算，圈层归属感不等于必须全入。",
+            "优先走官方授权渠道，避免盗版和二手高溢价。"
+        ],
         "items": [
             {
-                "title": "IP周边与系列收集",
-                "types": ["谷子（徽章/挂件）", "IP周边", "系列收集"],
-                "why": "适合围绕同一个IP长期收集，强化归属感与圈层连接。",
-                "trigger_words": ["喜欢", "联名", "特别", "这次", "可爱"],
-                "risk_words": ["溢价", "不值", "质量", "做工", "退货"],
+                "title": "怀旧向 IP 和童年回忆款",
+                "types": ["童年", "情怀", "纪念"],
+                "why": "适合被童年记忆打动、愿意为老IP持续买单的人。",
+                "trigger_words": ["童年", "回忆", "情怀", "纪念", "经典"],
+                "risk_words": ["复刻缩水", "溢价", "占空间", "冲动囤货"],
+                "products": [
+                    {
+                        "name": "宝可梦 皮卡丘 20周年复刻公仔",
+                        "brand": "万代",
+                        "price_range": "300-500元",
+                        "emotion_tags": ["童年", "情怀"],
+                        "reason": "20周年复刻版，满满的童年回忆。"
+                    },
+                    {
+                        "name": "小浣熊 水浒卡 108将 收藏卡",
+                        "brand": "统一",
+                        "price_range": "<100元",
+                        "emotion_tags": ["怀旧", "集卡"],
+                        "reason": "干脆面卡片是80/90后集体记忆。"
+                    },
+                    {
+                        "name": "Hello Kitty 50周年纪念款",
+                        "brand": "三丽鸥",
+                        "price_range": "100-300元",
+                        "emotion_tags": ["情怀", "纪念"],
+                        "reason": "周年限定，承载多年陪伴。"
+                    }
+                ]
             },
             {
-                "title": "棉花娃娃与“陪伴感”玩法",
-                "types": ["棉花娃娃", "娃衣/配件", "桌搭周边"],
-                "why": "更偏长期陪伴与社群互动，适合稳定投入。",
-                "trigger_words": ["可爱", "手感", "柔软", "治愈", "喜欢"],
-                "risk_words": ["掉毛", "做工", "异味", "色差", "退货"],
+                "title": "适合同好社交和交换互动的周边",
+                "types": ["社交", "交换", "同好互动"],
+                "why": "适合通过收藏认识朋友、参加线下交换和社群互动的人。",
+                "trigger_words": ["同好", "交换", "社交", "挂件", "交流"],
+                "risk_words": ["攀比", "黄牛", "溢价", "线下安全"],
+                "products": [
+                    {
+                        "name": "迪士尼 达菲与朋友们 挂件",
+                        "brand": "迪士尼",
+                        "price_range": "100-300元",
+                        "emotion_tags": ["同好", "社交"],
+                        "reason": "达菲家族是社交利器，线下换娃必备。"
+                    },
+                    {
+                        "name": "泡泡玛特 萌粒 糖罐",
+                        "brand": "泡泡玛特",
+                        "price_range": "<100元",
+                        "emotion_tags": ["交换", "互动"],
+                        "reason": "萌粒适合在社群中交换、赠送。"
+                    },
+                    {
+                        "name": "52TOYS 超活化 仕女",
+                        "brand": "52TOYS",
+                        "price_range": "100-300元",
+                        "emotion_tags": ["话题", "交流"],
+                        "reason": "设计有话题性，容易引发讨论。"
+                    }
+                ]
             },
-        ],
+            {
+                "title": "收藏展示和全系列收集向",
+                "types": ["收藏", "展示", "全制霸"],
+                "why": "适合重视完整度、展示感和长期保值体验的人。",
+                "trigger_words": ["收藏", "全套", "展示", "保值", "限量"],
+                "risk_words": ["防潮", "积灰", "成本高", "超预算"],
+                "products": [
+                    {
+                        "name": "泡泡玛特 MEGA 珍藏系列",
+                        "brand": "泡泡玛特",
+                        "price_range": ">1000元",
+                        "emotion_tags": ["收藏", "全制霸"],
+                        "reason": "大娃尺寸，收藏价值高。"
+                    },
+                    {
+                        "name": "万代 METAL BUILD 高达",
+                        "brand": "万代",
+                        "price_range": ">1000元",
+                        "emotion_tags": ["收藏", "保值"],
+                        "reason": "合金材质，细节精致，升值潜力大。"
+                    },
+                    {
+                        "name": "迪士尼 公主 典藏版人偶",
+                        "brand": "迪士尼",
+                        "price_range": "500-1000元",
+                        "emotion_tags": ["集齐", "展示"],
+                        "reason": "公主系列适合全套收集。"
+                    }
+                ]
+            },
+            {
+                "title": "限定打卡和旅行纪念款",
+                "types": ["限定", "园区", "打卡拍照"],
+                "why": "适合喜欢到现场买限定、把旅行体验变成收藏的人。",
+                "trigger_words": ["限定", "打卡", "园区", "地标", "拍照"],
+                "risk_words": ["黄牛", "溢价", "排队", "冲动下单"],
+                "products": [
+                    {
+                        "name": "迪士尼 五周年限定 城堡徽章",
+                        "brand": "迪士尼",
+                        "price_range": "100-300元",
+                        "emotion_tags": ["限定", "打卡"],
+                        "reason": "园区限定，打卡必备。"
+                    },
+                    {
+                        "name": "泡泡玛特 城市限定系列",
+                        "brand": "泡泡玛特",
+                        "price_range": "<100元",
+                        "emotion_tags": ["稀缺", "地标"],
+                        "reason": "每个城市限定款，旅行打卡必买。"
+                    },
+                    {
+                        "name": "草莓熊 限定 花束礼盒",
+                        "brand": "迪士尼",
+                        "price_range": "300-500元",
+                        "emotion_tags": ["限定", "拍照"],
+                        "reason": "节日限定款，适合拍照发圈。"
+                    }
+                ]
+            }
+        ]
     },
+
     "佛系水豚": {
         "tribe": "或许这里有你的同好：桌搭党、治愈系收集党、手感控",
-        "brands_primary": ["52TOYS（摆件线）", "泡泡玛特（治愈系系列）", "TOP TOY（桌搭类）"],
+        "brands_primary": ["52TOYS（摆件线）", "泡泡玛特（治愈系系列）", "TOP TOY（桌搭类）", "Jellycat", "Nici", "RoLife", "若态"],
         "channels": ["看口碑评价与细节图", "优先可退换渠道", "避免不明来源高溢价款"],
+        "same_circle_buys": [
+            {"name": "LIVHEART 恐龙抱枕", "brand": "LIVHEART", "price_range": "200-400元", "tag": "可抱可枕"},
+            {"name": "迪士尼 松松 毛绒玩偶", "brand": "迪士尼", "price_range": "<100元", "tag": "小巧治愈"},
+            {"name": "迪士尼 水晶球 音乐盒", "brand": "迪士尼", "price_range": "200-400元", "tag": "梦幻摆件"},
+            {"name": "野兽派 熊猫 抱枕", "brand": "野兽派", "price_range": "200-300元", "tag": "软萌陪伴"},
+            {"name": "Kinbor 手账本", "brand": "Kinbor", "price_range": "<100元", "tag": "安静独处"},
+        ],
+        "pitfalls": [
+            "不要只看图片种草，注意实物色差、材质和清洁难度。",
+            "治愈感很重要，但材质安全和耐用性更重要。"
+        ],
         "items": [
             {
-                "title": "治愈桌搭小物（悦己向）",
-                "types": ["摆件", "毛绒/小玩具", "桌搭周边"],
-                "why": "强调颜值与手感，适合自我治愈与长期摆放。",
-                "trigger_words": ["治愈", "解压", "手感", "柔软", "舒服", "喜欢"],
-                "risk_words": ["做工", "质量", "瑕疵", "掉毛", "异味"],
+                "title": "治愈解压和柔软手感款",
+                "types": ["治愈", "柔软", "解压"],
+                "why": "适合压力大时想放松、偏好软乎乎和安全感的人。",
+                "trigger_words": ["治愈", "放松", "柔软", "手感", "舒服"],
+                "risk_words": ["掉毛", "异味", "材质不安全", "老化"],
+                "products": [
+                    {
+                        "name": "Jellycat 邦尼兔 害羞系列",
+                        "brand": "Jellycat",
+                        "price_range": "100-300元",
+                        "emotion_tags": ["治愈", "柔软"],
+                        "reason": "触感极佳，公认的解压神器。"
+                    },
+                    {
+                        "name": "Nici 绵羊 安抚玩偶",
+                        "brand": "Nici",
+                        "price_range": "100-300元",
+                        "emotion_tags": ["放松", "安抚"],
+                        "reason": "德国老牌，材质安全，抱感舒适。"
+                    },
+                    {
+                        "name": "减压包子捏捏乐",
+                        "brand": "杂牌",
+                        "price_range": "<50元",
+                        "emotion_tags": ["解压", "发泄"],
+                        "reason": "便宜便携，随时捏一捏。"
+                    }
+                ]
             },
             {
-                "title": "品质细节优先（少而精）",
-                "types": ["手办/摆件", "高评价系列", "稳定供给款"],
-                "why": "更适合追求稳定体验，降低踩雷概率。",
-                "trigger_words": ["做工", "质量", "满意", "不错", "特别"],
-                "risk_words": ["瑕疵", "破损", "色差", "退货", "售后"],
+                "title": "高颜值桌搭和审美摆件",
+                "types": ["设计", "艺术感", "桌搭"],
+                "why": "适合看重设计语言、摆在桌上也要好看的用户。",
+                "trigger_words": ["设计", "颜值", "精致", "艺术感", "摆着好看"],
+                "risk_words": ["色差", "积灰", "质感不符", "难打理"],
+                "products": [
+                    {
+                        "name": "POP MART 小野 系列",
+                        "brand": "泡泡玛特",
+                        "price_range": "<100元",
+                        "emotion_tags": ["设计", "艺术感"],
+                        "reason": "小野风格独特，摆件感强。"
+                    },
+                    {
+                        "name": "RoLife 仿真动物模型",
+                        "brand": "RoLife",
+                        "price_range": "100-300元",
+                        "emotion_tags": ["写实", "精致"],
+                        "reason": "细节逼真，适合作为桌面装饰。"
+                    },
+                    {
+                        "name": "若态 八音盒 DIY小屋",
+                        "brand": "若态",
+                        "price_range": "300-500元",
+                        "emotion_tags": ["手工", "美观"],
+                        "reason": "拼装后非常精美，兼具功能性与观赏性。"
+                    }
+                ]
             },
-        ],
+            {
+                "title": "陪伴感强、适合抱着和放在身边的产品",
+                "types": ["陪伴", "抱抱", "温暖"],
+                "why": "适合想要一点情绪支持、喜欢有存在感陪伴物的人。",
+                "trigger_words": ["陪伴", "抱着", "治愈", "温暖", "不孤单"],
+                "risk_words": ["难清洗", "依赖", "掉毛", "异味"],
+                "products": [
+                    {
+                        "name": "IKEA 鲨鱼 毛绒玩具",
+                        "brand": "宜家",
+                        "price_range": "100-200元",
+                        "emotion_tags": ["陪伴", "温暖"],
+                        "reason": "网红鲨鱼，很多人抱着睡觉。"
+                    },
+                    {
+                        "name": "Gund 泰迪熊 毛绒",
+                        "brand": "Gund",
+                        "price_range": "200-400元",
+                        "emotion_tags": ["柔软", "陪伴"],
+                        "reason": "可录音互动，增加陪伴感。"
+                    },
+                    {
+                        "name": "长草颜文字 抱枕",
+                        "brand": "名创优品",
+                        "price_range": "<100元",
+                        "emotion_tags": ["可爱", "抱抱"],
+                        "reason": "表情治愈，适合抱着追剧。"
+                    }
+                ]
+            },
+            {
+                "title": "适合安静独处和沉浸自赏的产品",
+                "types": ["独处", "沉浸", "私密"],
+                "why": "适合不爱晒图、偏好自己慢慢玩和静静欣赏的人。",
+                "trigger_words": ["独处", "沉浸", "安静", "专注", "自己欣赏"],
+                "risk_words": ["材料安全", "零件细小", "胶水", "占空间"],
+                "products": [
+                    {
+                        "name": "DIY 数字油画",
+                        "brand": "杂牌",
+                        "price_range": "50-100元",
+                        "emotion_tags": ["沉浸", "自我"],
+                        "reason": "独自完成，享受过程，不分享。"
+                    },
+                    {
+                        "name": "微缩模型 小屋 DIY",
+                        "brand": "若态",
+                        "price_range": "100-300元",
+                        "emotion_tags": ["私密", "专注"],
+                        "reason": "制作过程安静，成品自赏。"
+                    },
+                    {
+                        "name": "单向历 设计款",
+                        "brand": "单向空间",
+                        "price_range": "<100元",
+                        "emotion_tags": ["独处", "仪式"],
+                        "reason": "每天撕一页，属于自己的时光。"
+                    }
+                ]
+            }
+        ]
     },
+
     "理智过客": {
         "tribe": "或许这里有你的同好：送礼党、轻度体验党、路人收藏",
-        "brands_primary": ["经典摆件/手办", "解压捏捏", "毛绒挂件/钥匙扣", "IP联名文具与生活小物", "小盲盒"],
+        "brands_primary": ["迪士尼", "名创优品", "泡泡玛特", "乐高", "野兽派"],
         "channels": ["优先可退换", "避免高溢价冲动买", "送礼先确认对方偏好"],
+        "same_circle_buys": [
+            {"name": "乐高 花束 植物系列", "brand": "乐高", "price_range": "300-500元", "tag": "送礼稳妥"},
+            {"name": "野兽派 香薰 礼盒", "brand": "野兽派", "price_range": "200-400元", "tag": "氛围感"},
+            {"name": "酷乐潮玩 杂货 小摆件", "brand": "酷乐潮玩", "price_range": "<50元", "tag": "便宜有趣"},
+            {"name": "官方旗舰店 预售款", "brand": "官方渠道", "price_range": "原价浮动", "tag": "可靠"},
+            {"name": "迪士尼 米奇 经典公仔", "brand": "迪士尼", "price_range": "100-300元", "tag": "大众认知高"},
+        ],
+        "pitfalls": [
+            "送礼别选太冷门的IP，优先大众认知度高的经典品牌。",
+            "冲动消费前先搜同款比价，尽量保留小票。"
+        ],
         "items": [
             {
-                "title": "基础款试水（低风险）",
-                "types": ["基础款", "经典款", "小件试水"],
-                "why": "先小成本验证是否真的喜欢，再考虑升级。",
-                "trigger_words": ["喜欢", "可爱", "不错", "满意"],
-                "risk_words": ["不值", "溢价", "退货", "客服", "质量"],
+                "title": "送礼稳妥、不容易出错的产品",
+                "types": ["礼盒", "精致", "大众接受度高"],
+                "why": "适合送朋友、家人、同事，重在稳妥和体面。",
+                "trigger_words": ["礼物", "精致", "包装", "惊喜", "可爱"],
+                "risk_words": ["冷门IP", "物流延误", "包装破损", "售后"],
+                "products": [
+                    {
+                        "name": "迪士尼 公主 礼盒套装",
+                        "brand": "迪士尼",
+                        "price_range": "300-500元",
+                        "emotion_tags": ["礼品", "精致"],
+                        "reason": "包装精美，适合送礼。"
+                    },
+                    {
+                        "name": "名创优品 三丽鸥 零食礼包",
+                        "brand": "名创优品",
+                        "price_range": "<100元",
+                        "emotion_tags": ["实用", "可爱"],
+                        "reason": "零食加玩偶，性价比高。"
+                    },
+                    {
+                        "name": "泡泡玛特 限定盲盒礼盒",
+                        "brand": "泡泡玛特",
+                        "price_range": "100-300元",
+                        "emotion_tags": ["惊喜", "礼物"],
+                        "reason": "盲盒形式增加收礼人的惊喜感。"
+                    }
+                ]
             },
             {
-                "title": "送礼向（更稳）",
-                "types": ["礼盒", "联名小件", "轻量周边"],
-                "why": "礼赠更看重“稳妥与好看”，不建议押注概率玩法。",
-                "trigger_words": ["可爱", "特别", "喜欢", "这次"],
-                "risk_words": ["溢价", "不值", "做工", "质量", "售后"],
+                "title": "随手买一个也不心疼的平价小物",
+                "types": ["平价", "小件", "即兴购买"],
+                "why": "适合路过看到就买，重在轻松试水。",
+                "trigger_words": ["随手", "可爱", "便宜", "小物件", "即兴"],
+                "risk_words": ["被宰", "冲动消费", "不值", "退换麻烦"],
+                "products": [
+                    {
+                        "name": "名创优品 盲袋",
+                        "brand": "名创优品",
+                        "price_range": "<50元",
+                        "emotion_tags": ["随手", "平价"],
+                        "reason": "逛街时看到随手拿一个，不心疼。"
+                    },
+                    {
+                        "name": "泡泡玛特 自动售卖机 随机款",
+                        "brand": "泡泡玛特",
+                        "price_range": "<100元",
+                        "emotion_tags": ["随机", "冲动"],
+                        "reason": "路过机器顺手买一个，体验拆盒乐趣。"
+                    },
+                    {
+                        "name": "迪士尼 钥匙扣 挂件",
+                        "brand": "迪士尼",
+                        "price_range": "50-100元",
+                        "emotion_tags": ["可爱", "即兴"],
+                        "reason": "小物件，适合偶遇时购买。"
+                    }
+                ]
             },
-        ],
+            {
+                "title": "任务明确、按需求购买的产品",
+                "types": ["指定款", "代购", "任务导向"],
+                "why": "适合帮别人买、目标明确、不追求情绪体验的人。",
+                "trigger_words": ["指定", "代购", "任务", "准确", "版本"],
+                "risk_words": ["买错版本", "假货", "价格不透明", "等待过久"],
+                "products": [
+                    {
+                        "name": "万代 高达 模型 指定款",
+                        "brand": "万代",
+                        "price_range": "100-300元",
+                        "emotion_tags": ["任务", "准确"],
+                        "reason": "帮朋友代购，指定型号，目标明确。"
+                    },
+                    {
+                        "name": "泡泡玛特 指定盲盒系列",
+                        "brand": "泡泡玛特",
+                        "price_range": "<100元",
+                        "emotion_tags": ["代购", "精确"],
+                        "reason": "朋友指定要某个系列，直接买。"
+                    },
+                    {
+                        "name": "限定潮玩预定",
+                        "brand": "各类官方/代购渠道",
+                        "price_range": "价格不定",
+                        "emotion_tags": ["任务", "等待"],
+                        "reason": "海外代购任务，需要等待。"
+                    }
+                ]
+            },
+            {
+                "title": "只想了解圈子但不想深度入坑",
+                "types": ["经典IP", "大众认知", "轻了解"],
+                "why": "适合基本不怎么买，但想知道大家都在喜欢什么的人。",
+                "trigger_words": ["看看", "了解", "经典", "大众", "轻度尝试"],
+                "risk_words": ["硬消费", "跟风入坑", "买了不用"],
+                "products": [
+                    {
+                        "name": "迪士尼 米奇 经典公仔",
+                        "brand": "迪士尼",
+                        "price_range": "100-300元",
+                        "emotion_tags": ["大众熟知", "经典符号"],
+                        "reason": "大众认知高，适合了解这个圈子。"
+                    },
+                    {
+                        "name": "泡泡玛特 热门款展示",
+                        "brand": "泡泡玛特",
+                        "price_range": "<100元",
+                        "emotion_tags": ["热门", "供了解"],
+                        "reason": "不用重投入，也能知道当前流行什么。"
+                    }
+                ]
+            }
+        ]
     },
 }
 
@@ -344,45 +807,66 @@ PERSONA_PROFILE = {
         "traits": ["爱分享、爱开箱", "追求新鲜感与话题", "容易被联名/限定刺激"],
         "pay_items": ["盲盒/抽选", "联名限定周边", "线下快闪体验"],
         "price": "100–500元/月（热度高时可能更高）",
+        "buy_style": "更容易为热度、稀缺感和晒图价值买单",
+        "advice_focus": "重点提醒理性看待溢价和黄牛炒价"
     },
     "圈层海王": {
         "title": "圈层归属型用户",
         "traits": ["围绕IP长期收集", "重视同好与归属", "更在意系列完整度"],
         "pay_items": ["IP周边/谷子", "棉花娃娃及配件", "社群活动/展会"],
         "price": "100–300元/月（随追更/补款波动）",
+        "buy_style": "更容易为情怀、完整度和圈层连接持续消费",
+        "advice_focus": "重点提醒预算控制和官方授权渠道"
     },
     "佛系水豚": {
         "title": "悦己治愈型用户",
         "traits": ["为自己解压治愈", "重视手感/颜值/质感", "不追热点，偏少而精"],
         "pay_items": ["治愈桌搭摆件", "毛绒/解压小物", "高口碑手办/摆件"],
         "price": "50–300元/月（更看重品质稳定）",
+        "buy_style": "更容易为颜值、舒适感和长期陪伴感买单",
+        "advice_focus": "重点提醒材质安全、色差和清洁成本"
     },
     "理智过客": {
         "title": "理性低涉入型用户",
         "traits": ["不常买，更多试水/送礼", "价格敏感，讨厌溢价", "优先可退换与口碑"],
         "pay_items": ["基础款试水", "礼赠向联名小件", "文具/生活小物"],
         "price": "≤100元/月（节日送礼时上升）",
+        "buy_style": "更容易为实用性、稳妥感和低风险体验买单",
+        "advice_focus": "重点提醒送礼选大众IP、冲动消费先比价"
     },
 }
 
 TEAM_INTRO = """
-我们是一支关注“童趣消费”与年轻人情绪价值的研究团队。  
-我们希望通过轻量测评 + 同好社群 + 分享传播，帮助用户更快找到属于自己的消费人格、
-理解自己的购买动机，并在同圈层中获得归属感与表达空间。
+我们是一群对“成年人为何为童趣买单”充满好奇的大学生。  
+
+通过 840 份问卷、30 场深度访谈和 1888 条网络评论，我们发现那些看似幼稚的玩具，其实是成年人在高压生活中为自己留出的温柔缝隙。  
+
+正如一位受访者所说：“平时工作节奏太快，买个毛绒玩具就是给自己一点小小的放松。”  
+
+童趣消费，本质上是一场温柔的自我养育——在理性现实的缝隙中，保留一点初心与热爱。  
+
+我们希望通过这个测评工具，帮助更多人理解自己的消费心理，找到真正适合自己的情绪陪伴。
 """
 
-ABOUT_US = """
-**我们是谁**  
-我们是一个围绕“童趣消费人格”展开研究与产品设计的团队，希望把问卷研究、用户画像、圈层社交和传播玩法结合起来。
+ABOUT_US = """ 
 
-**为什么做这个**  
-很多年轻人的消费并不只是“买东西”，而是在购买治愈感、社交感、收藏感和表达感。  
-我们想做一个更有趣、更可分享、也更有研究价值的小应用，把这些差异用可视化和社群互动的方式呈现出来。
+**研究简介**  
+我们是一群对“成年人为何为童趣买单”充满好奇的大学生。  
+通过 840 份问卷、30 场深度访谈和 1888 条网络评论，我们发现，那些看似幼稚的玩具，其实是成年人在高压生活中为自己留出的温柔缝隙。  
+正如一位受访者所说：“平时工作节奏太快，买个毛绒玩具就是给自己一点小小的放松。”  
+童趣消费，本质上是一场温柔的自我养育——在理性现实的缝隙中，保留一点初心与热爱。
 
-**我们希望带来的价值**  
-1. 帮助用户更快认识自己的童趣消费偏好  
-2. 让同类型用户能在同好广场里互相交流  
-3. 用邀请、海报、榜单等方式增强传播和留存
+**核心数据可视化**  
+- 双轨制参与比例：47.5%  
+- 情感分析词云（正向 / 负向）  
+
+**我们的初心故事**  
+为什么研究成年人童趣消费？  
+我们希望呼应“童趣是温柔的自我养育”的理念，让大家理解玩具背后的情绪价值。  
+通过测评工具，帮助更多人理解自己的消费心理，找到真正适合自己的情绪陪伴。  
+
+**荣誉墙 / 成果展示**  
+- 采纳证明、表扬信、媒体报道
 """
 
 # =========================================================
@@ -452,6 +936,33 @@ def adjust_words_by_context(trigger_words, risk_words, budget, premium_ok, scene
         return out
 
     return uniq(trigger_words), uniq(risk_words)
+def price_range_matches(price_range: str, budget: int) -> bool:
+    if price_range == "<50元":
+        return budget < 50
+    if price_range == "<100元":
+        return budget < 100
+    if price_range == "50-100元":
+        return 50 <= budget <= 100
+    if price_range == "100-200元":
+        return 100 <= budget <= 200
+    if price_range == "100-300元":
+        return 100 <= budget <= 300
+    if price_range == "200-400元":
+        return 200 <= budget <= 400
+    if price_range == "300-500元":
+        return 300 <= budget <= 500
+    if price_range == "500-1000元":
+        return 500 <= budget <= 1000
+    if price_range == ">1000元":
+        return budget > 1000
+    if price_range in ["价格不定", "原价浮动"]:
+        return True
+    return True
+
+
+def filter_products_by_budget(products: list, budget: int) -> list:
+    matched = [p for p in products if price_range_matches(p.get("price_range", ""), budget)]
+    return matched if matched else products
 
 def cutout_checkerboard_to_png(in_path: Path, out_path: Path, tol: int = 22) -> bool:
     img = cv2.imread(str(in_path), cv2.IMREAD_COLOR)
@@ -1143,6 +1654,37 @@ def render_result():
                 it["trigger_words"], it["risk_words"], budget, premium_ok, "送礼" if scene == "送礼" else scene
             )
 
+            st.markdown("### 为你匹配的具体产品")
+            matched_products = filter_products_by_budget(it.get("products", []), budget)
+            if matched_products:
+                for p in matched_products:
+                    tags = "、".join(p.get("emotion_tags", []))
+                    st.markdown(
+                        f"""
+                        <div class="mini-card">
+                            <b>{p['name']}</b><br>
+                            <span class="muted">品牌：{p['brand']} ｜ 价格：{p['price_range']}</span><br>
+                            情绪标签：{tags}<br>
+                            推荐理由：{p['reason']}
+                        </div>
+                        """,
+                        unsafe_allow_html=True
+                    )
+            else:
+                st.info("当前预算下暂无特别匹配的产品，已为你保留该方向的默认推荐。")
+
+            st.markdown("### 同圈层人还买了")
+            same_circle_buys = filter_products_by_budget(cfg.get("same_circle_buys", []), budget)
+            if same_circle_buys:
+                for p in same_circle_buys:
+                    st.markdown(f"- {p['name']}（{p['brand']}，{p['price_range']}，{p['tag']}）")
+            else:
+                st.caption("当前预算下暂无同圈层热门产品。")
+
+            st.markdown("### 避坑建议")
+            for tip in cfg.get("pitfalls", []):
+                st.markdown(f"- {tip}")
+
             st.divider()
             L, R = st.columns(2)
             with L:
@@ -1300,11 +1842,49 @@ def render_plaza():
 # 关于我们
 # =========================================================
 def render_about():
-    st.markdown("## 关于我们")
-    st.markdown('<div class="card">', unsafe_allow_html=True)
-    st.write(ABOUT_US)
-    st.markdown('</div>', unsafe_allow_html=True)
+    # 顶部标题 + logo
+    col_title, col_logo = st.columns([5, 1])  # 左大右小
+    with col_title:
+        st.markdown("<h2 style='margin-bottom:0px'>关于我们</h2>", unsafe_allow_html=True)
+        st.markdown(f"<div style='margin-top:10px'>{ABOUT_US}</div>", unsafe_allow_html=True)
+    with col_logo:
+        logo_path = IMG_DIR / "about" / "about_icon.jpg"
+        if logo_path.exists():
+            st.image(logo_path, width=240)  # 放大 logo
 
+    st.markdown("---")
+
+    # 核心数据可视化折叠框
+    with st.expander("核心数据可视化（点击查看）"):
+        st.markdown("- 双轨制参与比例：47.5%")
+        st.markdown("- 情感分析词云（正向 / 负向）")
+
+        cols = st.columns(3)
+        double_track_path = IMG_DIR / "about" / "double_track.png"
+        pos_wordcloud_path = IMG_DIR / "about" / "emotion_wordcloud_pos.png"
+        neg_wordcloud_path = IMG_DIR / "about" / "emotion_wordcloud_neg.png"
+
+        if double_track_path.exists():
+            cols[0].image(double_track_path, caption="基础款 vs 限量款 受众交叉矩阵", width=380)
+        if pos_wordcloud_path.exists():
+            cols[1].image(pos_wordcloud_path, caption="正向情感词云", width=380)
+        if neg_wordcloud_path.exists():
+            cols[2].image(neg_wordcloud_path, caption="负向情感词云", width=380)
+
+    st.markdown("---")
+
+    # 荣誉墙 / 成果展示
+    st.markdown("### 荣誉墙 / 成果展示")
+    honor_imgs = [
+        "honor_wall_1.png",
+        "honor_wall_2.png",
+        "honor_wall_3.png",
+        "honor_wall_4.png",
+    ]
+    for img_file in honor_imgs:
+        img_path = IMG_DIR / "about" / img_file
+        if img_path.exists():
+            st.image(img_path, width=750)
 # =========================================================
 # 页面路由
 # =========================================================
