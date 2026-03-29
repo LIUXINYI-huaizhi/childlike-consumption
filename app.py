@@ -38,13 +38,125 @@ MINIPROGRAM_QR = IMG_DIR / "miniprogram_code.png"
 FONT_PATH = str(FONT_DIR / "msyh.ttc")
 if not Path(FONT_PATH).exists():
     FONT_PATH = r"C:\Windows\Fonts\msyh.ttc"
+import streamlit as st
 
+st.set_page_config(
+    page_title="Fun-BTI 童趣测评",
+    page_icon="🎯",
+    layout="wide",
+    initial_sidebar_state="collapsed",
+)
+
+# # 全局 CSS
+# st.markdown(
+#     """
+#     <style>
+#     /* 页面背景 */
+#     body {
+#         background-color: #FFF9F2;
+#     }
+
+#     /* 按钮样式 */
+#     div.stButton > button {
+#         background-color: #FFD66B;
+#         color: #000000;
+#         border-radius: 10px;
+#     }
+#     div.stButton > button:hover {
+#         background-color: #FFC53D;
+#     }
+
+#     /* 卡片背景 */
+#     .stMarkdown div[style*="background-color"] {
+#         background-color: #FFF3D6 !important;
+#         border-radius: 12px !important;
+#         padding: 15px !important;
+#     }
+
+#     /* 文本输入框 */
+#     .stTextInput>div>input, .stFileUploader>div>input {
+#         border: 1px solid #FFD66B;
+#         border-radius: 8px;
+#     }
+#     </style>
+#     """,
+#     unsafe_allow_html=True
+# )
+# =========================================================
+# 样式
+# =========================================================
 # =========================================================
 # 样式
 # =========================================================
 st.markdown(
     """
     <style>
+    /* 页面背景色 */
+    body, .block-container {
+        background-color: #FFF9F2;  /* 米黄色背景 */
+    }
+
+    /* 板块背景色及涂鸦装饰 */
+    .section-card {
+        background-color: #FFF1D6;  /* 比页面背景稍深 */
+        border-radius: 18px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 8px 24px rgba(2,6,23,0.06);
+        position: relative;
+        overflow: hidden;
+    }
+    .section-card::before {
+        content: "";
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        width: 100px;
+        height: 100px;
+        background: rgba(255,198,100,0.2);
+        transform: rotate(25deg);
+        border-radius: 50% 40% 30% 50%;
+    }
+    .section-card::after {
+        content: "";
+        position: absolute;
+        bottom: -15px;
+        left: -15px;
+        width: 80px;
+        height: 80px;
+        background: rgba(255,198,100,0.15);
+        transform: rotate(-15deg);
+        border-radius: 50% 40% 30% 50%;
+    }
+
+    /* 按钮柔和色 + 手绘涂鸦边框 */
+    div.stButton>button {
+        background-color: #FFE5B5;  /* 柔和按钮色 */
+        color: #000000;
+        border-radius: 12px;
+        border: 2px solid rgba(255,200,100,0.6);
+        padding: 0.7rem 1rem;
+        font-weight: 700;
+        box-shadow: 0 6px 18px rgba(2,6,23,0.05);
+        position: relative;
+    }
+    div.stButton>button::before {
+        content: "";
+        position: absolute;
+        top: -4px;
+        left: -4px;
+        width: calc(100% + 8px);
+        height: calc(100% + 8px);
+        border: 2px dashed rgba(255,180,50,0.5);
+        border-radius: 14px;
+        transform: rotate(-2deg);
+        pointer-events: none;
+    }
+    div.stButton>button:hover {
+        background-color: #FFF1A8;
+    }
+
+    /* 保留原有 block-container、header、toolbar 样式 */
     .block-container {
         padding-top: 1.8rem !important;
         padding-bottom: 2.2rem;
@@ -56,43 +168,14 @@ st.markdown(
     }
     div[data-testid="stToolbar"] { visibility: hidden; height: 0px; }
 
+    /* 字体与文本保持不变 */
     html, body, [class*="css"]  {
         font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI",
                      "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
                      Arial, sans-serif;
     }
 
-    .nav-wrap {
-        position: sticky;
-        top: 0;
-        z-index: 999;
-        background: rgba(255,255,255,.92);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(148,163,184,.18);
-        border-radius: 20px;
-        padding: 10px 14px;
-        box-shadow: 0 10px 30px rgba(2,6,23,.06);
-        margin-bottom: 18px;
-    }
-
-    .hero-wrap { text-align: center; margin-top: 0.6rem; margin-bottom: 1.1rem; }
-    .hero-title {
-        font-size: 2.35rem;
-        font-weight: 900;
-        line-height: 1.15;
-        letter-spacing: .5px;
-        background: linear-gradient(90deg, #2563eb, #7c3aed, #ec4899);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        margin: 0.0rem 0 0.25rem 0;
-    }
-    .hero-sub {
-        color: #64748b;
-        font-size: 1.05rem;
-        margin: 0 auto;
-        max-width: 820px;
-    }
-
+    /* 保留原有卡片、图片、pill 样式 */
     .card {
         border: 1px solid rgba(148,163,184,.35);
         border-radius: 18px;
@@ -100,8 +183,10 @@ st.markdown(
         background: rgba(255,255,255,.82);
         box-shadow: 0 8px 24px rgba(2,6,23,.08);
     }
-    .muted { color: #64748b; }
-
+    .stImage img{
+        border-radius: 16px;
+        box-shadow: 0 16px 40px rgba(2,6,23,.12);
+    }
     .pill {
         display:inline-block;
         padding: 6px 12px;
@@ -129,81 +214,6 @@ st.markdown(
         padding: 14px 14px;
         box-shadow: 0 10px 22px rgba(2,6,23,.06);
         margin-bottom: 12px;
-    }
-
-    .preview-card{
-        border: 1px solid rgba(148,163,184,.28);
-        border-radius: 18px;
-        padding: 14px;
-        background: linear-gradient(180deg, rgba(99,102,241,.04), rgba(236,72,153,.04));
-        box-shadow: 0 10px 22px rgba(2,6,23,.05);
-        height: 100%;
-    }
-
-    .profile-wrap{
-        background: linear-gradient(180deg, rgba(99,102,241,.06), rgba(236,72,153,.05));
-        border: 1px solid rgba(148,163,184,.35);
-        border-radius: 22px;
-        padding: 18px;
-        box-shadow: 0 18px 40px rgba(2,6,23,.10);
-    }
-    .profile-head{
-        display:flex; align-items:flex-end; justify-content:space-between;
-        gap: 12px; margin-bottom: 14px;
-    }
-    .profile-title{
-        font-size: 1.75rem; font-weight: 950; letter-spacing:.3px;
-        margin: 0;
-    }
-    .profile-sub{
-        color:#64748b; font-size:.95rem; margin: 4px 0 0 0;
-    }
-    .badge{
-        display:inline-flex; align-items:center; gap:8px;
-        padding: 7px 12px;
-        border-radius: 999px;
-        background: rgba(37,99,235,.12);
-        color: #1d4ed8;
-        font-weight: 900;
-        font-size: .92rem;
-        border: 1px solid rgba(37,99,235,.18);
-    }
-
-    .chips{ display:flex; flex-wrap:wrap; gap:8px; margin-top: 6px; }
-    .chip{
-        padding: 6px 10px;
-        border-radius: 999px;
-        background: rgba(236,72,153,.10);
-        color:#be185d;
-        font-weight: 800;
-        font-size: .90rem;
-        border: 1px solid rgba(236,72,153,.18);
-    }
-
-    .kv{
-        display:grid;
-        grid-template-columns: 92px 1fr;
-        gap: 8px 10px;
-        align-items: baseline;
-        font-size: .98rem;
-        line-height: 1.55;
-    }
-    .k{ color:#64748b; font-weight:700; }
-    .v{ color:#0f172a; font-weight:650; }
-
-    .list{ margin: 0; padding-left: 1rem; }
-    .list li{ margin: .35rem 0; line-height: 1.55; font-size: .98rem; }
-
-    div.stButton>button {
-        border-radius: 14px;
-        padding: 0.72rem 1rem;
-        font-weight: 800;
-        border: 1px solid rgba(148,163,184,.45);
-        box-shadow: 0 10px 26px rgba(2,6,23,.08);
-    }
-    .stImage img{
-        border-radius: 16px;
-        box-shadow: 0 16px 40px rgba(2,6,23,.12);
     }
     </style>
     """,
@@ -1484,7 +1494,9 @@ def render_home():
         unsafe_allow_html=True
     )
 
-    st.markdown('<div class="card">', unsafe_allow_html=True)
+    st.markdown(
+    '<div class="section-card">', unsafe_allow_html=True
+)
     st.markdown("## 队伍简介")
     st.write(TEAM_INTRO)
     st.markdown('</div>', unsafe_allow_html=True)
